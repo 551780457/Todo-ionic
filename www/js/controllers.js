@@ -3,7 +3,7 @@ angular.module('todo.io.controllers', [])
 // *******************
 // 向导页面
 // *******************
-.controller('TutorialCtrl', function($scope, $state, $ionicViewService) {
+.controller('UserCenterCtrl', function($scope, $state, $ionicViewService) {
 
   window.localStorage['didTutorial'] = false;// For Test
 
@@ -238,9 +238,9 @@ angular.module('todo.io.controllers', [])
 .controller('SearchCtrl', function($scope, $stateParams, TodoListService) {
   $scope.searchKey = "";
 
-　　// "搜索任务"Event
+// "搜索任务"Event
   $scope.searchToDo = function(searchKey) {
-      if (searchKey != undefined && searchKey != "")　{
+      if (searchKey != undefined && searchKey != ""){
           TodoListService.findByTitle(searchKey).then(function(todolists) {
             $scope.todolists = todolists;
           });

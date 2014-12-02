@@ -13,12 +13,39 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+      .state('tabs', {
+        url: "/tab",
+        abstract: true,
+        templateUrl: "templates/tabs.html"
+      })
 
-     .state('tutorial', {
-        url: '/',
-        templateUrl: 'templates/tutorial.html',
-        controller: 'TutorialCtrl'
-     })
+      .state('tabs.home', {
+        url: "/home",
+        views: {
+          'home-tab': {
+            templateUrl: "templates/tutorial.html",
+            controller: 'UserCenterCtrl'
+          }
+        }
+      })
+      .state('tabs.about', {
+        url: "/about",
+        views: {
+          'about-tab': {
+            templateUrl: "templates/tutorial.html",
+            controller: 'UserCenterCtrl'
+          }
+        }
+      })
+      .state('tabs.contact', {
+        url: "/contact",
+        views: {
+          'contact-tab': {
+            templateUrl: "templates/tutorial.html",
+            controller: 'UserCenterCtrl'
+          }
+        }
+      })
 
     .state('app', {
       url: "/app",
@@ -95,8 +122,9 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
           controller: 'SettingsCtrl'
         }
       }
-    });
+    })
 
-  $urlRouterProvider.otherwise('/');
+
+  $urlRouterProvider.otherwise('/tab/home');
 });
 
