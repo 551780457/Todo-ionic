@@ -1,44 +1,35 @@
-* {
-  font-family: "Helvetica Neue", Helvetica, Arial, Roboto, 'Droid Sans', "Lucida Grande", sans-serif;
+
+
+
+.bar.bar-light .title {
+  font-size: 28px;
+  color: #33ccff;
 }
 
-.slider {
-  height: 100%;
-}
-.slider-slide {
-  text-align: center;
-  font-weight: 300;
+.user-info {
+  padding-top: 10%;
 }
 
-.box  {
-  height: 100%;
-}
-.box h1  {
-  color: #fff;
+.user-info a h3 {
+  color: #aaaaaa;
 }
 
-.blue {
-  background-color: #4a87ee;
-}
-.yellow {
-  background-color: #f0b840;
-}
-.pink {
-  background-color: #8a6de9;
+.blue a {
+  color: #ffffff;
+  font-size: 20px;
 }
 
-.pink a {
-  right:0;
+.blue span {
+  font-size: 35px;
+  color: chocolate;
 }
 
-.btn-start {
-  top: initial;
-  bottom : 40px;
-  width: 100px;
-  margin:0 auto;
-  display:block;
+.ion-email::before {
+  content: url('../img/dcn_ledou_ic.png');
 }
 
-.selected {
-  background-color: #d2dced;
+.item-icon-right .icon.hint{
+  font-size: 15px;
+  padding-right: 32px;
+  color:#33ccff;
 }

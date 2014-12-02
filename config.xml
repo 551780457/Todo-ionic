@@ -12,7 +12,7 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="SplashScreen" value="splash" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreenDelay" value="3000" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />

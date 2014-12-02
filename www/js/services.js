@@ -83,18 +83,18 @@ angular.module('todo.io.services', [])
                     return Date.today().equals(Date.parse(element.date, "yyyy/MM/dd"))
                             && parseInt(status) === element.status;
                 }
-                return parseInt(groupId) === element.groupId 
+                return parseInt(groupId) === element.groupId
                         && parseInt(status) === element.status;
             });
             var results = results.sort(function(a, b){
                switch ( sortKey ) {
-                  case "date": 
+                  case "date":
                     return a.date > b.date;
-                  case "title": 
+                  case "title":
                     return a.title > b.title;
-                  case "importance": 
+                  case "importance":
                     return parseInt(b.importance) - parseInt(a.importance);
-                  default: 
+                  default:
                     return parseInt(a.id) - parseInt(b.id);
                }
             });
@@ -110,4 +110,25 @@ angular.module('todo.io.services', [])
             return deferred.promise;
         }
     }
+})
+
+.service('task', function task($http, $q, $rootScope){
+
+    var task = this;
+
+    task.getUserInfo = function(user){
+        var defer = $q.defer();
+
+        $http.post($rootScope.point,user)
+            .success(function(res){
+                defer.resolve(res);
+            })
+            .error(function(err, status){
+                defer.reject(err);
+            })
+
+        return defer.promise;
+    }
+
+    return task;
 })

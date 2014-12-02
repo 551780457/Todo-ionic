@@ -1,36 +1,28 @@
 angular.module('todo.io.controllers', [])
 
 // *******************
-// 向导页面
+// 用户中心
 // *******************
-.controller('TutorialCtrl', function($scope, $state, $ionicViewService) {
+.controller('UserCenterCtrl', function($scope, $state, $ionicViewService) {
 
-  window.localStorage['didTutorial'] = false;// For Test
-
-  var startApp = function() {
-    $ionicViewService.clearHistory();
-    // 默认进入“今天”的任务列表
-    $state.go('app.todolist', {groupId: -3});
-    window.localStorage['didTutorial'] = true;
-  };
-
-  if(window.localStorage['didTutorial'] === "true") {
-    console.log('Skip intro');
-    // 向导页面只显示一次
-    startApp();
-  } else {
-    setTimeout(function () {
-      navigator.splashscreen.hide();
-    }, 750);
-  }
-
-  // "立即体验"按钮Event
-  $scope.gotoMain = function() {
-    startApp();
-  }
-
-  $scope.slideHasChanged = function(index) {
-  };
+      //$scope.init = function(){
+      //  var username = 'a81566119';
+      //  User.setUsername(username);
+      //  $scope.user = User.getuser();
+      //  //$scope.getUserInfo();
+      //}
+      //
+      //$scope.getUserInfo = function(){
+      //  task.getUserInfo($scope.user)
+      //      .then(function(res){
+      //
+      //      }, function(err){
+      //
+      //      });
+      //}
+      //
+      //
+      //$scope.init();
 })
 
 // *******************
@@ -238,9 +230,9 @@ angular.module('todo.io.controllers', [])
 .controller('SearchCtrl', function($scope, $stateParams, TodoListService) {
   $scope.searchKey = "";
 
-　　// "搜索任务"Event
+// "搜索任务"Event
   $scope.searchToDo = function(searchKey) {
-      if (searchKey != undefined && searchKey != "")　{
+      if (searchKey != undefined && searchKey != ""){
           TodoListService.findByTitle(searchKey).then(function(todolists) {
             $scope.todolists = todolists;
           });
