@@ -1,4 +1,4 @@
-<ion-view title="home">
+<ion-view class="home" title="home">
     <ion-header-bar class="bar bar-light">
         <div class="buttons">
             <button class="button button-light" ng-click="switchAccount()">切换账号</button>
@@ -9,7 +9,7 @@
         </div>
     </ion-header-bar>
     <ion-content class="user-info">
-            <a class="item item-thumbnail-left" ng-disable="true">
+            <ion-item class="item item-thumbnail-left">
                 <img ng-src="img/001.jpg">
 
                 <h2>{{ user.uName + '(' + user.uid + ')' }}</h2>
@@ -17,7 +17,7 @@
                 <h3>帐户余额:{{user.aBalance}}a币</h3>
 
                 <h3>最后登录时间:{{ user.lastLoginTime }}</h3>
-            </a>
+            </ion-item>
         </div>
 
         <div class="list list-inset blue">

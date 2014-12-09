@@ -1,34 +1,37 @@
 
-
-
-.bar.bar-light .title {
-  font-size: 28px;
-  color: #33ccff;
+.home .bar-light div, .bar-light h1{
+  padding-top: 2%;
 }
 
-.user-info {
+.home .bar.bar-light .title {
+  font-size: 26px;
+  color: #33ccff;
+  height: auto;
+}
+
+.home .user-info {
   padding-top: 10%;
 }
 
-.user-info a h3 {
+.home .user-info a h3 {
   color: #aaaaaa;
 }
 
-.blue a {
+.home .blue a {
   color: #ffffff;
   font-size: 20px;
 }
 
-.blue span {
+.home .blue span {
   font-size: 35px;
   color: chocolate;
 }
 
-.ion-email::before {
+.home .ion-email::before {
   content: url('../img/dcn_ledou_ic.png');
 }
 
-.item-icon-right .icon.hint{
+.home .item-icon-right .icon.hint{
   font-size: 15px;
   padding-right: 32px;
   color:#33ccff;
