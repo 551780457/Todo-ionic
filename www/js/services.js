@@ -112,7 +112,7 @@ angular.module('todo.io.services', [])
     }
 })
 
-.service('task', function task($http, $q, $rootScope){
+.service('Task', function task($http, $q, $rootScope){
 
     var task = this;
 
@@ -132,3 +132,31 @@ angular.module('todo.io.services', [])
 
     return task;
 })
+
+.factory('User', function(){
+        var UserInfo = {
+            uid:'',
+            token:'',
+            uName:'',
+            nickName:'',
+            password:'',
+            mobile:'',
+            mail:'',
+            question:'',
+            answer:'',
+            version:'Android1.2',
+            imei:'111111',
+            authCode:'',
+            flag:''
+        }
+
+        return{
+            setUsername : function(username){
+              UserInfo.uName = username;
+            },
+
+            getUser:function(){
+                return UserInfo;
+            }
+        }
+    })
