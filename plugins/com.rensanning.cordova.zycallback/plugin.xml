@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.rensanning.cordova.zycallback"
+    version="0.0.1">
+    <name>ZYCallbackPlugin</name>
+    <description>ZYCallbackPlugin Description</description>
+    <author>sandy</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/ZYCallbackPlugin.js" name="ZYCallbackPlugin">
+        <clobbers target="ZYCallbackPlugin" />
+    </js-module>
+    <platform name="android">
+        <source-file src="src/android/ZYCallbackPlugin.java" target-dir="src/com/rensanning/cordova/zycallback" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ZYCallbackPlugin">
+                <param name="android-package" value="com.rensanning.cordova.zycallback.ZYCallbackPlugin"/>
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
