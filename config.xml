@@ -21,4 +21,11 @@
     <feature name="StatusBar">
       <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
+    <feature name="ZYCallbackPlugin">
+        <param name="android-package" value="com.rensanning.cordova.zycallback.ZYCallbackPlugin" />
+    </feature>
+
+    <feature name="AppAvailability">
+        <param name="android-package" value="com.ohh2ahh.appavailability.AppAvailability" />
+    </feature>
 </widget>

@@ -2,7 +2,7 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
 
     .run(function ($ionicPlatform, $rootScope) {
 
-        $rootScope.point = 'http://cms.any8.com:8080/auser/action/do';
+        $rootScope.point = 'http://172.16.41.51:8080/test/s.do';
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -13,7 +13,10 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
         });
     })
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+        $httpProvider.defaults.timeout = 5000;
+
         $stateProvider
             .state('tabs', {
                 url: "/tab",

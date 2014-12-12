@@ -124,7 +124,7 @@ angular.module('todo.io.services', [])
                 defer.resolve(res);
             })
             .error(function(err, status){
-                defer.reject(err);
+                defer.reject(err, status);
             })
 
         return defer.promise;
@@ -159,4 +159,20 @@ angular.module('todo.io.services', [])
                 return UserInfo;
             }
         }
+    })
+
+.factory('ZYCallback', function(){
+
+        function onSuccess(result) {
+            alert("Result: " + result);
+        }
+        function onFailure(err) {
+            alert("Failure: " + err);
+        }
+        return {
+            call : function() {
+                Carrier.getCarrierCode(onSuccess, onFailure);
+            }
+        }
+
     })
