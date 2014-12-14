@@ -1,29 +1,23 @@
-<ion-side-menus>
-  <ion-side-menu-content class="bar-positive">
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
-  </ion-side-menu-content>
-  <ion-side-menu side="left">
-    <ion-header-bar align-title="center" class="bar-stable">
-      <h1 class="title">ToDo</h1>
-      <div class="buttons pull-right" nav-clear menu-close ng-click="settings()">
-        <button class="button button-icon icon ion-gear-b"></button>
-      </div>
-    </ion-header-bar>
-    <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close ng-repeat="menu in menus" href="#/app/todolist/{{menu.groupId}}">
-          <i class="icon ion-grid"></i> {{menu.title}} <span class="badge" ng-if="menu.badge>0">{{menu.badge}}</span>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-    <ion-footer-bar class="bar-stable">
-    <div class="button-bar">
-      <a class="button button-clear" nav-clear menu-close ng-click="addGroup()">添加</a>
-      <a class="button button-clear" nav-clear menu-close ng-click="editGroup()">编辑</a>
-    </div>
-    </ion-footer-bar>
-  </ion-side-menu>
-</ion-side-menus>
+<ion-nav-bar class="bar-calm nav-title-slide-ios7">
+    <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+        返回
+    </ion-nav-back-button>
+
+</ion-nav-bar>
+
+
+
+<ion-tabs class="tabs-icon-top tabs-calm">
+
+    <ion-tab title="主页" icon="ion-home" ui-sref="tutorial.html" href="#/tab/home">
+        <ion-nav-view name="home-tab"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="礼包" icon="ion-social-vimeo" href="#/tab/gift">
+        <ion-nav-view name="gift-tab"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="客服" icon="ion-person-stalker" href="#/tab/service">
+        <ion-nav-view name="service-tab"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

@@ -1,0 +1,46 @@
+<ion-view title="个人中心">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-undo"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-log-out"></button>
+    </ion-nav-buttons>
+
+            <ion-content class="has-header user-home">
+                <div class="home-label">
+                    <ion-item class="item item-icon-right ">
+                        <span class="pic"><img ng-src="img/iconaai.png"></span>
+
+                        <div class="info">
+                            <p>用户名:{{ user.uName + '(' + user.uid + ')' }}</p>
+                            <p class="ui-badge-wrap">桉树叶:100片<a class="ui-badge-corner">?</a></p>
+                            <p>积分:{{ user.uName + '(' + user.uid + ')' }}</p>
+                        </div>
+                    </ion-item>
+                </div>
+            <div class="list list-inset ctrl-btn">
+                <a class="item item-icon-left item-icon-right calm-bg" href="#">
+                    <i class="icon ion-email"></i>
+                    <span>|</span> a币充值
+                    <i class="icon ion-ios7-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="list card home-form">
+                <a href="#/todolist/2" class="item item-icon-right">
+                    <i class="icon ion-ios7-arrow-right"></i>
+                    交易记录
+                </a>
+                <a href="#" class="item item-icon-right">
+                    <i class="icon ion-ios7-arrow-right"></i>
+                    修改密码
+                </a>
+                <a href="#" class="item item-icon-right">
+                    <i class="icon hint">未设置</i>
+                    <i class="icon ion-ios7-arrow-right"></i>
+                    绑定手机号
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

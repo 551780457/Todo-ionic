@@ -1,0 +1,50 @@
+<ion-view title="礼包">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-undo-outline"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-log-out"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="login-form">
+            <div class="title">
+                <img ng-src="img/iconaai.png">
+                指游方寸
+            </div>
+
+            <ul class="form-list">
+                <li>
+                    <span class="form-label-left"><i class="ion-ios7-person-outline"></i></span>
+                    <div class="form-cont">
+                        <input name="user.username" ng-model="user.username" type="text" placeholder="邮箱/手机号"
+                               required class="ctrl-txt"/>
+                    </div>
+                </li>
+                <li>
+                    <span class="form-label-left"><i class="ion-ios7-locked-outline"></i></span>
+                    <!--<span class="form-label-right"><i class="ion-ios7-close-outline"></i></span>-->
+                    <div class="form-cont">
+                        <input name="user.password" ng-model="user.password" type="password" placeholder="密码"
+                               required class="ctrl-txt"/>
+                    </div>
+                </li>
+            </ul>
+
+           <div class="link">
+                   <label class="ui-checkbox ui-checkbox-s">
+                       <input type="checkbox">记住密码
+                   </label>
+               <a ng-click="toreg()">忘记密码？</a>
+           </div>
+
+            <div class="form-action">
+                <button type="submit" class="ctrl-btn button button-calm" ng-click="login()">登录</button>
+            </div>
+
+            <div class="row">
+                <div class="col col-67"><button type="submit" class="ctrl-btn button button-balanced" ng-click="login()">手机号一键注册登录</button></div>
+                <div class="col"><button type="submit" class="ctrl-btn button button-calm" ng-click="login()">账号注册</button></div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

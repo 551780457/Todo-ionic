@@ -14,12 +14,12 @@ angular.module('todo.io.controllers', [])
 
         $scope.getUserInfo = function () {
 
-            Task.getUserInfo($scope.user)
-                .then(function (res) {
-                    alert(res);
-                }, function (err, status) {
-                    alert('网络访问失败');
-                });
+            //Task.getUserInfo($scope.user)
+            //    .then(function (res) {
+            //        alert(res);
+            //    }, function (err, status) {
+            //        alert('网络访问失败');
+            //    });
         }
 
 

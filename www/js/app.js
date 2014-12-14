@@ -21,32 +21,32 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
-                templateUrl: "templates/tabs.html"
+                templateUrl: "templates/menu.html"
             })
 
             .state('tabs.home', {
                 url: "/home",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/tutorial.html",
+                        templateUrl: "templates/user_center.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
             })
-            .state('tabs.about', {
-                url: "/about",
+            .state('tabs.gift', {
+                url: "/gift",
                 views: {
-                    'about-tab': {
-                        templateUrl: "templates/tutorial.html",
+                    'gift-tab': {
+                        templateUrl: "templates/login.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
             })
-            .state('tabs.contact', {
-                url: "/contact",
+            .state('tabs.service', {
+                url: "/service",
                 views: {
                     'contact-tab': {
-                        templateUrl: "templates/tutorial.html",
+                        templateUrl: "templates/user_center.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
@@ -55,7 +55,7 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
             .state('app', {
                 url: "/app",
                 abstract: true,
-                templateUrl: "templates/menu.html",
+                templateUrl: "templates/login.html",
                 controller: 'AppCtrl'
             })
 
