@@ -32,12 +32,12 @@
            </div>
 
             <div class="form-action">
-                <button type="submit" class="ctrl-btn button button-calm" ng-click="login()">登 录</button>
+                <button type="submit" class="ctrl-btn button button-calm" ng-click="doLogin()">登 录</button>
             </div>
 
             <div class="row">
-                <div class="col col-67"><button type="submit" class="ctrl-btn button button-balanced" ng-click="login()">手机号一键注册登录</button></div>
-                <div class="col"><button type="submit" class="ctrl-btn button button-calm" ng-click="login()">账号注册</button></div>
+                <div class="col col-67"><button type="submit" class="ctrl-btn button button-balanced" ng-click="toUsePhoneReg()">手机号一键注册登录</button></div>
+                <div class="col"><button type="submit" class="ctrl-btn button button-calm" ng-click="toNormalReg()">账号注册</button></div>
             </div>
         </div>
     </ion-content>
@@ -60,7 +60,7 @@
                     </label>
                     <label class="item item-input">
                         <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
-                        <input name="user.pwdConfirm" ng-model="user.passconfirm" type="password" placeholder="请确认密码(必填)"
+                        <input name="user.pwdConfirm" ng-model="user.pwdConfirm" type="password" placeholder="请确认密码(必填)"
                                required>
                     </label>
                     <label class="item item-input">
@@ -69,12 +69,12 @@
                     </label>
                     <label class="item item-input ctrl-btn-right">
                         <span class="form-label-left"><i class="ion-iphone"></i></span>
-                        <input name="user.autoCode" ng-model="user.mobile" type="tel" placeholder="请输入验证码" required>
-                        <button type="submit" class=" button button-balanced" ng-click="login()">获取验证码</button>
+                        <input name="user.authCode" ng-model="user.authCode" type="text" placeholder="请输入验证码" required>
+                        <button type="submit" class=" button button-balanced" ng-click="getAuthCode()">获取验证码</button>
                     </label>
                 </ion-item>
                 <div class="form-action">
-                    <button type="submit" class="ctrl-btn button button-calm" ng-click="login()">注册</button>
+                    <button type="submit" class="ctrl-btn button button-calm" ng-click="doRegister()">注册</button>
                 </div>
             </div>
         </ion-content>
