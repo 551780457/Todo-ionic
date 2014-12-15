@@ -41,16 +41,16 @@
     background-position: -75px -25px
 }
 
-.ui-badge, .ui-badge-muted, .ui-badge-corner {
+.ui-badge-corner {
     display: inline-block;
     text-align: center;
-    background: #f74c31;
+    background: #43cee6;
     color: #fff;
     font-size: 12px;
-    height: 22px;
+    height: 23px;
     line-height: 22px;
     -webkit-border-radius: 12px;
-    padding: 0 7px
+    padding: 0 6px
 }
 .ui-badge-corner.activated{
     background: #1A9BDF;

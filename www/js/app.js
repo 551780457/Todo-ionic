@@ -18,6 +18,18 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
         $httpProvider.defaults.timeout = 5000;
 
         $stateProvider
+            .state('account', {
+                url: "/",
+                templateUrl: "templates/account-login.html",
+                controller: 'AppCtrl'
+            })
+
+            .state('reg', {
+                url: '/reg',
+                templateUrl: "templates/account-register.html",
+                controller: 'AppCtrl'
+            })
+
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
@@ -37,7 +49,7 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
                 url: "/gift",
                 views: {
                     'gift-tab': {
-                        templateUrl: "templates/login.html",
+                        templateUrl: "templates/account-login.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
@@ -45,19 +57,14 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
             .state('tabs.service', {
                 url: "/service",
                 views: {
-                    'contact-tab': {
+                    'service-tab': {
                         templateUrl: "templates/user_center.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
             })
 
-            .state('app', {
-                url: "/app",
-                abstract: true,
-                templateUrl: "templates/login.html",
-                controller: 'AppCtrl'
-            })
+
 
             .state('app.todolist', {
                 url: "/todolist/:groupId",
@@ -130,6 +137,6 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
             })
 
 
-        $urlRouterProvider.otherwise('/tab/home');
+        $urlRouterProvider.otherwise('/');
     });
 
