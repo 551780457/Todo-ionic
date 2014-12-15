@@ -21,13 +21,13 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
             .state('account', {
                 url: "/",
                 templateUrl: "templates/account-login.html",
-                controller: 'AppCtrl'
+                controller: 'AccountCtrl'
             })
 
             .state('reg', {
                 url: '/reg',
                 templateUrl: "templates/account-register.html",
-                controller: 'AppCtrl'
+                controller: 'AccountCtrl'
             })
 
             .state('tabs', {
@@ -63,80 +63,6 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
                     }
                 }
             })
-
-
-
-            .state('app.todolist', {
-                url: "/todolist/:groupId",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/todo_list.html",
-                        controller: 'TodolistsCtrl'
-                    }
-                }
-            })
-
-            .state('app.todolistedit', {
-                url: "/todolist/edit/:groupId",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/todo_list_edit.html",
-                        controller: 'TodolistsEditCtrl'
-                    }
-                }
-            })
-
-            .state('app.todoinfo', {
-                url: "/todo/:todoId",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/todo_info.html",
-                        controller: 'TodoCtrl'
-                    }
-                }
-            })
-
-            .state('app.grouplist', {
-                url: "/group",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/group_list.html",
-                        controller: 'GrouplistCtrl'
-                    }
-                }
-            })
-
-            .state('app.groupinfo', {
-                url: "/group/:groupId",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/group_info.html",
-                        controller: 'GroupCtrl'
-                    }
-                }
-            })
-
-            .state('app.search', {
-                url: "/search",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/search.html",
-                        controller: 'SearchCtrl'
-                    }
-                }
-            })
-
-            .state('app.settings', {
-                url: "/settings",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/settings.html",
-                        controller: 'SettingsCtrl'
-                    }
-                }
-            })
-
-
         $urlRouterProvider.otherwise('/');
     });
 
