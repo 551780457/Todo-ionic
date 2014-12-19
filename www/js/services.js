@@ -133,9 +133,9 @@ angular.module('todo.io.services', [])
     return task;
 })
 
-.factory('User', function(){
+.factory('User', [function(){
         var UserInfo = {
-            uid:'',
+            uid:0,
             token:'',
             uName:'',
             nickName:'',
@@ -144,35 +144,42 @@ angular.module('todo.io.services', [])
             mail:'',
             question:'',
             answer:'',
-            version:'Android1.2',
+            version:'papa_web',
             imei:'111111',
             authCode:'',
-            flag:''
-        }
+            flag:0
+            };
 
+        var result_ok  = 100;
+        var result_99 = 99;
         return{
+
+            RESULT_OK : function(){
+                return result_ok;
+            },
+
+            RESULT_99 : function(){
+                return result_99;
+            },
+
             setUsername : function(username){
               UserInfo.uName = username;
             },
 
-            getUser:function(){
+            setPassword : function(password){
+              UserInfo.password = password;
+            },
+
+            setFlag : function(flag) {
+              UserInfo.flag = flag;
+            },
+
+            getUser : function(){
                 return UserInfo;
             }
-        }
-    })
 
-.factory('ZYCallback', function(){
 
-        function onSuccess(result) {
-            alert("Result: " + result);
         }
-        function onFailure(err) {
-            alert("Failure: " + err);
-        }
-        return {
-            call : function() {
-                Carrier.getCarrierCode(onSuccess, onFailure);
-            }
-        }
+    }])
 
-    })
+

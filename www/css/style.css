@@ -2,7 +2,9 @@
 .login-form{ padding:30px 0 0; color:#1A9BDF;}
 .login-form .title{ padding:50px 0; text-align:center; font-size:16px; font-weight:bold;}
 .login-form .form-list li{ clear:both; height:35px; padding:0 30px 0 60px; margin-bottom:10px; margin-left:10px; margin-right: 10px; border:1.5px solid #1A9BDF; overflow: hidden; border-radius:4px;}
+
 .login-form .form-label-left{ float:left; width:50px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
+
 .login-form .form-label-right{ float:right; width:30px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
 .form-action{ width:100%; padding:0 10px;}
 .login-form .ctrl-txt{ padding:0 10px}
@@ -13,8 +15,8 @@
 .login-form .link a:first-child{ float:left;}
 .login-form .link a:last-child{ float:right;}
 
-.reg-form .form-label{border: none}
-.reg-form .form-label-left,.reg-form .form-label-left i{float:left; display:block;color:#1A9BDF;font-size: 30px; text-align: center; padding-right: 15px; width: 40px}
+.reg-form .form-label{border: none; padding: 10px}
+.reg-form .form-label-left {display:block; color:#1A9BDF;font-size: 30px; text-align: center; padding-right: 15px; width: 40px;}
 .reg-form .ctrl-btn-right button{float:right; right: 8px; display:block; width:30%; text-align: center; padding: 0; min-height:40px; height: 40px ;}
 .reg-form .ctrl-btn-right input{-webkit-flex: 1 0 50%;
     -moz-flex: 1 0 50%;

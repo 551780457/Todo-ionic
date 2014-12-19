@@ -2,7 +2,8 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
 
     .run(function ($ionicPlatform, $rootScope) {
 
-        $rootScope.point = 'http://172.16.41.51:8080/test/s.do';
+        //$rootScope.point = 'http://172.16.41.51:8080/auser/action/do.htm';
+        $rootScope.point = 'http://172.16.9.222:8080/auser/action/do.htm';
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -26,7 +27,7 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
 
             .state('reg', {
                 url: '/reg',
-                templateUrl: "templates/account-register.html",
+                templateUrl: "templates/account-reg.html",
                 controller: 'AccountCtrl'
             })
 
