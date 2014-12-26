@@ -1,10 +1,12 @@
-angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'todo.io.controllers', 'nsPopover'])
+angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'todo.io.controllers', 'nsPopover'])
 
-    .run(function ($ionicPlatform, $rootScope) {
+    .run(function ($ionicPlatform, $rootScope , DB) {
 
-        //$rootScope.point = 'http://172.16.41.51:8080/auser/action/do.htm';
-        $rootScope.point = 'http://172.16.9.222:8080/auser/action/do.htm';
+        $rootScope.point = 'http://172.16.41.51:8080/auser/action/do.htm';
+       //$rootScope.point = 'http://172.16.9.222:8080/auser/action/do.htm';
+       // $rootScope.point = 'http://172.16.44.193:8080/auser/action/do.htm';
         $ionicPlatform.ready(function () {
+            DB.init();
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
@@ -19,10 +21,10 @@ angular.module('todo.io', ['ionic', 'todo.io.directives', 'todo.io.filters', 'to
         $httpProvider.defaults.timeout = 5000;
 
         $stateProvider
-            .state('account', {
+            .state('login', {
                 url: "/",
                 templateUrl: "templates/account-login.html",
-                controller: 'AccountCtrl'
+                controller: 'LoginCtrl'
             })
 
             .state('reg', {

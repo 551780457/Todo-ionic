@@ -46,8 +46,9 @@ angular.module('todo.io.controllers', [])
 // *******************
 // 账户注册登录模块
 // *******************
-    .controller('AccountCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', 'User','Task', function ($scope,$state, $ionicPopup, $ionicLoading, User, Task) {
+    .controller('AccountCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', 'User','Task','Database', function ($scope,$state, $ionicPopup, $ionicLoading, User, Task, Database) {
         $scope.user = {};
+
         $scope.doRegister = function () {
             if(!$scope.checkInput()){
                 return;
@@ -60,20 +61,30 @@ angular.module('todo.io.controllers', [])
 
             User.setUsername($scope.user.username);
             User.setPassword($scope.user.password);
-            User.setFlag(0);
-            Task.getUserInfo(User.getUser())
-                .then(function (res) {
-                    $ionicLoading.hide();
-                    console.log('res', res);
-                    console.log('ok', User.getUser());
-                    var res = angular.fromJson(res);
-                    if(res['code'] == User.RESULT_OK()){
-                        $scope.showAlert('Tips','恭喜您，注册成功！');
-                    }
-                }, function (err, status) {
-                    $ionicLoading.hide();
-                    console.log('error', err);
+            User.setFlag('REG');
 
+            Task.getUserInfo(User.getUser())
+                .then(function (data) {
+                    var res = angular.fromJson(data.data);
+                    var code = res['code'];
+                    var desc = res['desc'];
+                    var msg = angular.fromJson(res['msg']);
+                    if(code == User.RESULT_OK()){
+                        User.setUser(msg);
+                        localStorage['user'] = JSON.stringify(User.getUser());
+                        //var ret = Database.insert(msg['uName'], msg['token']);
+                        //console.log(ret);
+                        $ionicLoading.hide();
+                        $scope.showAlert('恭喜您，注册成功！', function(){
+                            $state.go("login");
+                        });
+                    } else {
+                        $ionicLoading.hide();
+                        $scope.showAlert('注册失败,' + desc, function(){});
+                    }
+                }, function (data) {
+                    $ionicLoading.hide();
+                    $scope.showAlert('系统或网络异常，请稍后重试！', function(){});
                 });
 
         }
@@ -115,16 +126,132 @@ angular.module('todo.io.controllers', [])
         }
 
         // An alert dialog
-        $scope.showAlert = function(title,template) {
+        $scope.showAlert = function(template,success) {
             var alertPopup = $ionicPopup.alert({
-                title: title,
                 template: template
             });
-            alertPopup.then(function(res) {
-                console.log('Thank you for not eating my delicious ice cream cone' + res);
+            alertPopup.then(success);
+        };
+    }])
+
+    .controller('LoginCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', 'User','Task', 'Database', function ($scope,$state, $ionicPopup, $ionicLoading, User, Task, Database) {
+        $scope.user = {};
+        $scope.userList = [];
+        $scope.user.isChecked = true;
+        Database.getUserList().then(function(result){
+            $scope.userList = result;
+            if(User.getUserName() && User.getUserName() != ''){
+                $scope.user.username = User.getUserName();
+            } else if ($scope.userList.length > 0){
+                $scope.user.username = $scope.userList[0]['uName'];
+                $scope.user.password = $scope.userList[0]['password'];
+                if($scope.userList[0]['password'] == ''){
+                    $scope.user.isChecked = false;
+                }
+            }
+        });
+
+        $scope.toReg = function() {
+           $state.go("reg");
+        }
+
+        $scope.doTelReg = function() {
+           // Database.dropTable();
+        }
+
+        $scope.doLogin = function() {
+            if(!$scope.checkInput()){
+                return;
+            }
+
+            $ionicLoading.show({
+                noBackdrop:true,
+                template: '正在登录中...'
             });
+
+            //ZYCallbackPlugin.desEncrypt($scope.user.password, function(res){
+            //    alert(res);
+            //})
+            User.setUsername($scope.user.username);
+            User.setPassword($scope.user.password);
+            User.setFlag('LOGIN');
+            console.log('登录前的User:\n' + JSON.stringify(User.getUser()));
+            Task.getUserInfo(User.getUser())
+                .then(function (data) {
+                    var res = angular.fromJson(data.data);
+                    console.log('网络回调:\n' + JSON.stringify(res));
+                    var code = res['code'];
+                    var desc = res['desc'];
+                    var msg = angular.fromJson(res['msg']);
+
+                    if(code == User.RESULT_OK() || code == User.RESULT_99()){
+                        User.setUser(msg);
+                        console.log('登录后的User:\n' + JSON.stringify(User.getUser()));
+                        var login_date = new Date().getTime();
+                        console.error($scope.user.isChecked);
+                        if($scope.user.isChecked == true) {
+                            var ret = Database.insert(User.getUser(), login_date);
+                            console.log('存储结果1：' + JSON.stringify(ret));
+                        } else {
+
+                            User.setPassword('');
+                            var ret = Database.insert(User.getUser(), login_date);
+                            console.error(User.getUser());
+                            console.log('存储结果2：' + JSON.stringify(ret));
+                        }
+                        $ionicLoading.hide();
+                        $scope.toast(msg['uName'] + ', 欢迎回来！');
+                    } else {
+                        $ionicLoading.hide();
+                        $scope.showAlert('登录失败,' + desc, function(){});
+                    }
+                }, function (data) {
+                    $ionicLoading.hide();
+                    $scope.showAlert('系统或网络异常，请稍后重试！', function(){});
+                });
+        }
+
+        $scope.checkInput = function () {
+            var reg = /[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-@]{6,20}$/;
+            if(!$scope.user.username){
+                $scope.toast("用户名不能为空，请检查后重新填写")
+                return false;
+            }
+
+            if (!reg.test($scope.user.username)){
+                $scope.toast("用户名应为6-30个字符，只能包含数字、字母和“_”、“@”、“.”");
+                return false;
+            }
+
+            if(!$scope.user.password){
+                $scope.toast("密码不能为空，请检查后重新填写")
+                return false;
+            }
+
+            var reg2 = /[^\u4e00-\u9fa5]{6,20}$/;
+            if(!reg2.test($scope.user.password)) {
+                $scope.toast("密码应为6-20个字符,区分大小写,不能为中文")
+                return false;
+            }
+            return true;
+        }
+
+
+        $scope.toast = function (msg) {
+            alert(msg);
+            //window.plugins.toast.showShortTop(msg);
+        }
+
+        // An alert dialog
+        $scope.showAlert = function(template,success) {
+            var alertPopup = $ionicPopup.alert({
+                template: template
+            });
+            alertPopup.then(success);
         };
 
 
 
     }])
+
+
