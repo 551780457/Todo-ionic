@@ -2,9 +2,10 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
 
     .run(function ($ionicPlatform, $rootScope , DB) {
 
-        $rootScope.point = 'http://172.16.41.51:8080/auser/action/do.htm';
+        //$rootScope.point = 'http://172.16.41.51:8080/auser/action/do.htm';
        //$rootScope.point = 'http://172.16.9.222:8080/auser/action/do.htm';
        // $rootScope.point = 'http://172.16.44.193:8080/auser/action/do.htm';
+        $rootScope.point = 'http://172.16.45.226:8080/auser/action/do.htm';
         $ionicPlatform.ready(function () {
             DB.init();
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -22,6 +23,7 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
 
         $stateProvider
             .state('login', {
+
                 url: "/",
                 templateUrl: "templates/account-login.html",
                 controller: 'LoginCtrl'

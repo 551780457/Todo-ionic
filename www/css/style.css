@@ -22,6 +22,9 @@
     -moz-flex: 1 0 50%;
     -ms-flex: 1 0 50%;
     flex: 1 0 50%;}
+.reg-form .link a{text-decoration:none; padding:0px 10px 10px 10px;}
+.reg-form .link a:first-child{ float:right;}
+
 
 .user-home .home-label .item{width: 100%; border: none}
 .user-home .home-label .item .pic {float: left;margin:0 15px; height: 72px; width: 72px}

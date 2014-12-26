@@ -193,8 +193,7 @@ angular.module('todo.io.services', ['zy.config'])
             return DB.query('SELECT * FROM users WHERE uid=?', [user.uid])
                 .then(function(result){
                     if(result.rows.length > 0) {
-                        //var sql = 'UPDATE users SET uName = ''+ user.uName + ''
-                        return DB.query('UPDATE users SET uName = ?, password = ?, token = ?, login_date = ? WHERE uid = ?', [, user.password, user.token, login_date], user.uid)
+                        return DB.query('UPDATE users SET uName = ?, password = ?, token = ?, login_date = ? WHERE uid = ?', [user.uName, user.password, user.token, login_date, user.uid])
                             .then(function(result){
                                 console.error(result);
                                 return result;
