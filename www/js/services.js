@@ -7,7 +7,7 @@ angular.module('todo.io.services', ['zy.config'])
             var defer = $q.defer();
             var req = {
                 method: 'POST',
-                url: $rootScope.point,
+                url: $rootScope.site,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                 },
@@ -181,21 +181,17 @@ angular.module('todo.io.services', ['zy.config'])
                     return DB.fetchAll(result);
                 });
         };
-        //
-        //self.insert = function (user, login_date) {
-        //    return DB.query('INSERT INTO users (uid, uName, token, login_date) VALUES (?,?,?,?)', [uid, uName, token, login_date])
-        //        .then(function(result){
-        //            return result;
-        //        });
-        //};
 
         self.insert = function (user, login_date) {
+            //var password = ZYCallbackPlugin.desEncrypt(user.password, function(res){
+            //    return res;
+            //});
+            //console.log(password);
             return DB.query('SELECT * FROM users WHERE uid=?', [user.uid])
                 .then(function(result){
                     if(result.rows.length > 0) {
                         return DB.query('UPDATE users SET uName = ?, password = ?, token = ?, login_date = ? WHERE uid = ?', [user.uName, user.password, user.token, login_date, user.uid])
                             .then(function(result){
-                                console.error(result);
                                 return result;
                             });
                     }  else {

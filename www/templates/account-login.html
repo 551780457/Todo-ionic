@@ -1,11 +1,12 @@
 <ion-view>
-    <ion-content>
-        <div class="login-form">
-            <div class="title">
-                <img ng-src="img/iconaai.png">
-                指游方寸
-            </div>
-
+    <div>
+        <div class="bar bar-header bar-light account-header">
+            <!--<a class="button button-small icon ion-arrow-left-b" href="#/tab/brewers"></a>-->
+            <h1 class="title"><img src="img/logo36.png"/>{{display_title}}</h1>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div class="login-form " style="{{display_login}}">
             <ul class="form-list" type="submit">
                 <li>
                     <span class="form-label-left"><i class="ion-ios7-person"></i></span>
@@ -28,7 +29,7 @@
                    <label class="ui-checkbox ui-checkbox-s">
                        <input type="checkbox" ng-model="user.isChecked">记住密码
                    </label>
-               <a href="#/reg">忘记密码？{{user.isChecked}}</a>
+               <a href="#/reg">忘记密码？</a>
            </div>
 
             <div class="form-action">
@@ -36,9 +37,35 @@
             </div>
 
             <div class="row">
-                <div class="col col-67"><button type="submit" class="ctrl-btn button button-balanced" ng-click="doTelReg()">手机号一键注册</button></div>
+                <div class="col col-67"><button type="submit" class="ctrl-btn button button-balanced" ng-click="toTelReg()">手机号一键注册</button></div>
                 <div class="col"><button type="submit" class="ctrl-btn button button-calm" ng-click="toReg()">账号注册</button></div>
             </div>
         </div>
+
+        <div name="divreg" class="reg-form" style="{{display_tel_reg}}">
+            <form class="form-label" name="regform" type="submit">
+                <div class="item item-input first-input">
+                    <span class="form-label-left"><i class="ion-ios7-telephone"></i></span>
+                    <input name="mobile" ng-model="user.mobile" type="tel" placeholder="请输入手机号码(建议填写)">
+                </div>
+
+                <div class="item item-input ctrl-btn-right" ><!--ng-show="!regform.mobile.$error.required"-->
+                    <span class="form-label-left"><i class="ion-iphone"></i></span>
+                    <label class="item-input-wrapper inner-input">
+                        <input name="authCode" ng-model="user.authCode" type="text" placeholder="请输入验证码">
+                    </label>
+                    <button class=" button button-balanced" ng-click="getAuthCode()" ng-disabled="user.isEnabled">{{user.btnText}}</button>
+                </div>
+            </form>
+            <div class="form-action">
+                <button type="submit" class="ctrl-btn button button-calm" ng-click="doRegister()">注册</button>
+            </div>
+
+            <div class="link">
+                <a href="#" ng-click="toLogin()">已有账号？返回登录</a>
+            </div>
+        </div>
+
+
     </ion-content>
 </ion-view>

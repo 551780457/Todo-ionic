@@ -1,10 +1,7 @@
-
-.login-form{ padding:30px 0 0; color:#1A9BDF;}
-.login-form .title{ padding:50px 0; text-align:center; font-size:16px; font-weight:bold;}
+.bar.bar-light.account-header .title{ color: #1A9BDF; font-weight: bold; vertical-align: top}
+.login-form{ padding:0; color:#1A9BDF;}
 .login-form .form-list li{ clear:both; height:35px; padding:0 30px 0 60px; margin-bottom:10px; margin-left:10px; margin-right: 10px; border:1.5px solid #1A9BDF; overflow: hidden; border-radius:4px;}
-
 .login-form .form-label-left{ float:left; width:50px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
-
 .login-form .form-label-right{ float:right; width:30px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
 .form-action{ width:100%; padding:0 10px;}
 .login-form .ctrl-txt{ padding:0 10px}
@@ -15,14 +12,13 @@
 .login-form .link a:first-child{ float:left;}
 .login-form .link a:last-child{ float:right;}
 
-.reg-form .form-label{border: none; padding: 10px}
+.reg-form .form-label{border: none; padding: 1px 10px}
+.reg-form .form-label .item-input {min-height: 58px; height: 59px}
+.reg-form .form-label .item-input-wrapper.inner-input {padding-left: 0; background: none;}
+.reg-form .form-label .item-input-wrapper.inner-input input{flex: inherit; padding-right: 0}
 .reg-form .form-label-left {display:block; color:#1A9BDF;font-size: 30px; text-align: center; padding-right: 15px; width: 40px;}
-.reg-form .ctrl-btn-right button{float:right; right: 8px; display:block; width:30%; text-align: center; padding: 0; min-height:40px; height: 40px ;}
-.reg-form .ctrl-btn-right input{-webkit-flex: 1 0 50%;
-    -moz-flex: 1 0 50%;
-    -ms-flex: 1 0 50%;
-    flex: 1 0 50%;}
-.reg-form .link a{text-decoration:none; padding:0px 10px 10px 10px;}
+.reg-form .ctrl-btn-right button{min-height:40px; height: 40px ; margin-right: 5px}
+.reg-form .link a{text-decoration:none; padding:10px;}
 .reg-form .link a:first-child{ float:right;}
 
 
@@ -31,7 +27,7 @@
 .user-home .home-label .info.balance {width: auto}
 .user-home .ctrl-btn a{color: #ffffff;font-size: 20px; height: 48px}
 .user-home .ctrl-btn span{ font-size: 35px; color: chocolate;}
-.user-home .ctrl-btn .ion-email::before{content: url('../img/dcn_ledou_ic.png');}
+.user-home .ctrl-btn .ion-email::before{content: url('../img/logo36.png');}
 .user-home .ctrl-btn .item{padding-top: 8px;border-color: #1aacc3;}
 .user-home .ctrl-btn .item.activated{background-color:#1aacc3;box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.14902);}
 .user-home .home-form .item-icon-right .icon.hint{font-size: 15px;padding-right: 32px;color:#33ccff;}

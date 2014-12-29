@@ -124,7 +124,6 @@ angular.module('todo.io.controllers', [])
             return true;
         }
 
-
         $scope.toast = function (msg) {
             alert(msg);
             //window.plugins.toast.showShortTop(msg);
@@ -139,7 +138,7 @@ angular.module('todo.io.controllers', [])
         };
     }])
 
-    .controller('LoginCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', 'User','Task', 'Database', function ($scope,$state, $ionicPopup, $ionicLoading, User, Task, Database) {
+    .controller('LoginCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', '$interval', 'User','Task', 'Database', function ($scope,$state, $ionicPopup, $ionicLoading, $interval, User, Task, Database) {
         $scope.user = {};
         $scope.userList = [];
         $scope.user.isChecked = true;
@@ -157,13 +156,49 @@ angular.module('todo.io.controllers', [])
                 }
             });
         })
+        $scope.user.btnText = '获取验证码';
+        $scope.user.isEnabled = false;
 
-        $scope.toReg = function() {
-           $state.go("reg");
+        $scope.getAuthCode = function () {
+
+            if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test($scope.user.mobile))){
+                $scope.toast("请填写正确的手机号码")
+                return false;
+            }
+
+            var initSec = 120;
+            var stop;
+            $scope.fight = function() {
+                // Don't start a new fight if we are already fighting
+                if ( angular.isDefined(stop) ) return;
+
+                stop = $interval(function() {
+                    if (initSec > 0) {
+                        initSec = initSec - 1;
+                        $scope.user.btnText = '获取验证码(' + initSec + ')';
+                    } else {
+                        $scope.user.btnText = '获取验证码';
+                        $scope.user.isEnabled = false;
+                        $scope.stopFight();
+                    }
+                }, 1000);
+            };
+
+            $scope.stopFight = function() {
+                if (angular.isDefined(stop)) {
+                    $interval.cancel(stop);
+                    stop = undefined;
+                }
+            };
+
+            $scope.user.btnText = '获取验证码(' + initSec + ')';
+            $scope.user.isEnabled = true;
+            $scope.fight();
         }
-
-        $scope.doTelReg = function() {
-           // Database.dropTable();
+        
+        $scope.doTelReg = function () {
+            var tel = ZYDevice.tel;
+            alert(tel);
         }
 
         $scope.doLogin = function() {
@@ -246,7 +281,6 @@ angular.module('todo.io.controllers', [])
             return true;
         }
 
-
         $scope.toast = function (msg) {
             alert(msg);
             //window.plugins.toast.showShortTop(msg);
@@ -260,7 +294,24 @@ angular.module('todo.io.controllers', [])
             alertPopup.then(success);
         };
 
+        $scope.toLogin = function(){
+            $scope.display_title = "指游方寸";
+            $scope.display_login = "display:block";
+            $scope.display_tel_reg = "display:none";
+        }
 
+        $scope.toReg = function() {
+            $state.go("reg");
+        }
+
+        $scope.toTelReg = function(){
+            $scope.display_title = "用户注册";
+            $scope.display_login = "display:none";
+            $scope.display_tel_reg = "display:block";
+        }
+
+
+        $scope.toLogin();
 
     }])
 
