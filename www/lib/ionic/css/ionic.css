@@ -5458,6 +5458,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   background: transparent;
   cursor: pointer;
   -webkit-appearance: none; }
+
   .checkbox input:before, .checkbox-icon:before {
     display: table;
     width: 100%;

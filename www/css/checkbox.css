@@ -5,7 +5,7 @@
     position: relative;
     overflow: visible;
     border: 0;
-    background: 0 0;
+    background: transparent;
     -webkit-appearance: none;
     outline: 0;
     vertical-align: middle
@@ -14,7 +14,7 @@
 .ui-checkbox input:before {
     background: url(../img/icon.png?_bid=306) no-repeat -50px -25px;
     -webkit-background-size: 150px auto;
-    content: " ";
+    content: ' ';
     display: block;
     width: 25px;
     height: 25px;

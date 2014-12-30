@@ -17,9 +17,17 @@
 .reg-form .form-label .item-input-wrapper.inner-input {padding-left: 0; background: none;}
 .reg-form .form-label .item-input-wrapper.inner-input input{flex: inherit; padding-right: 0}
 .reg-form .form-label-left {display:block; color:#1A9BDF;font-size: 30px; text-align: center; padding-right: 15px; width: 40px;}
+.reg-form .form-action button{margin-top: 0;}
 .reg-form .ctrl-btn-right button{min-height:40px; height: 40px ; margin-right: 5px}
 .reg-form .link a{text-decoration:none; padding:10px;}
 .reg-form .link a:first-child{ float:right;}
+.reg-form .reg-check-1 label.item.item-checkbox{padding: 0 0 0 35px; border: none}
+.reg-form .reg-check-2 label.item.item-checkbox{padding: 0  0 0; border: none}
+.reg-form .reg-check-3 {padding: 0; border: none;vertical-align: middle;height:30px; line-height:30px; font-size: 16px;}
+.reg-form .reg-check-1 .item-checkbox .checkbox{left: 0px;}
+.reg-form .reg-check-2 .item-checkbox .checkbox{right: 30px;left: auto;padding: 7px 0 7px 7px;}
+.reg-form .reg-check-2{padding: 5px 0;}
+.reg-form .reg-check col{flex: 0 0 auto;max-width: 30%;}
 
 
 .user-home .home-label .item{width: 100%; border: none}

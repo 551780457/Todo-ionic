@@ -195,7 +195,7 @@ angular.module('todo.io.controllers', [])
             $scope.user.isEnabled = true;
             $scope.fight();
         }
-        
+
         $scope.doTelReg = function () {
             var tel = ZYDevice.tel;
             alert(tel);
