@@ -57,6 +57,15 @@
                     <button class=" button button-balanced" ng-click="getAuthCode()" ng-disabled="user.isEnabled">{{user.btnText}}</button>
                 </div>
             </form>
+
+            <div class="row reg-check">
+                <div class="col reg-check-2 text-right">
+                    <ion-checkbox ng-model="isChecked2" >同意</ion-checkbox>
+                </div>
+                <div class="col reg-check-3 text-right col-64px">
+                    <a href="" ng-click="cliced()">注册协议</a>
+                </div>
+            </div>
             <div class="form-action">
                 <button type="submit" class="ctrl-btn button button-calm" ng-click="doRegister()">注册</button>
             </div>

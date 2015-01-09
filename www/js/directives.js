@@ -40,3 +40,43 @@ angular.module('todo.io.directives', [])
         }
     };
 })
+    .directive('myDer', function () {
+        return {
+            restrict: 'A',
+            replace:true,
+            link: function (scope, element, attr) {
+                scope.$watch('che',
+                    function (newValue) {
+                        element[0].type = newValue ? 'text' : 'password';
+                    })
+            }
+        };
+    })
+
+
+
+    .directive('bcaSignUpPassword', function () {
+        var templateViewPassword = '<div>' +
+            '<input name="username" type="email" ng-model="user.Email"  placeholder="Email" required/>' +
+            '<input  name="password" type="password" class="input password" ng-model="user.Password"  placeholder="Password" required/>' +
+            '<input name="viewPassword"  type="checkbox" ng-model="viewPasswordCheckbox">' +
+            '</div>';
+
+
+        return {
+
+            template: templateViewPassword,
+            replace:true,
+            restrict: 'E',
+
+            link: function(scope, element, attrs) {
+
+                scope.$watch('viewPasswordCheckbox',
+                    function (newValue) {
+                        element.find('input')[1].type = newValue ? 'text' : 'password';
+                        console.debug(element.find('input'));
+                    })
+
+            }
+        };
+    });
