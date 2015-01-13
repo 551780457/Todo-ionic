@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68c503b6-72d6-4dc2-ada8-29e5867ecd2a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/account-login.html" afterPath="$PROJECT_DIR$/www/templates/account-login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/directives.js" afterPath="$PROJECT_DIR$/www/js/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
+    <list default="true" id="68c503b6-72d6-4dc2-ada8-29e5867ecd2a" name="Default" comment="登录用户记录">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/logo36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/logo48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/screenshots/screenshot-android-toast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/screenshots/screenshot-ios-toast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/screenshots/screenshot-wp8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/.fetch.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.rensanning.cordova.zydevice/.fetch.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/.fetch.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/platforms/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/plugins/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/AUTHORS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.rensanning.cordova.zycallback/src/android/Base64.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/BtreeInt_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/Btree_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/CHANGES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/Delegates.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/Hash_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/Lawnchair-sqlitePlugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/Lawnchair-sqlitePlugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/SQLite.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/SQLitePlugin.coffee.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/SQLitePlugin.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/ios/SQLitePlugin.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/android/org/pgsqlite/SQLitePlugin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/www/SQLitePlugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/ios/SQLitePlugin.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/ios/Toast+UIView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/ios/Toast+UIView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/wp8/Toast.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/ios/Toast.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/android/nl/xservices/plugins/Toast.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/www/Toast.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/src/ios/Toast.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/VdbeInt_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/Vdbe_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.rensanning.cordova.zydevice/src/android/ZYDevice.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.rensanning.cordova.zydevice/www/ZYDevice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/_Custom.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/account-reg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/alter_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/analyze_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/attach_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/auth_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/backup_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/bitvec_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/btmutex_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/btree_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/build_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/callback_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/complete_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/.cordova/config.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/crypto.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/ctime_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/date_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/delete_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/expr_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/fault_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/fkey_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/func_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/global_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/hash_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/hwtime_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/insert_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/journal_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/lib/json2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/keywordhash_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/lawnchair-spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/lib/lawnchair.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/legacy_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/loadext_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/main_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/malloc_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/mem_Pool.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/memjournal_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/mutex_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/mutex_noop_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/notify_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/opcodes_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/opcodes_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/os_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/os_common_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/os_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/os_win_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pager_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pager_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/parse_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/parse_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pcache1_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pcache_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pcache_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.rensanning.cordova.zydevice/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/pragma_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/prepare_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/printf_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/www/qunit-1.5.0.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/test-www/www/qunit-1.5.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/lib/qunit.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/Lawnchair-adapter/test-www/lib/qunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/random_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/reset-password.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/resolve_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/rowset_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/select_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/sqlite3_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/sqliteInt_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/sqliteLimit_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/status_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/table_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/bin/test.ps1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/bin/test.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/nl.x-services.plugins.toast/test/tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/tokenize_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/trigger_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/update_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/utf_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/util_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vacuum_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbe_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbeapi_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbeaux_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbeblob_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbemem_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vdbetrace_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/vtab_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/wal_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/wal_h.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/walker_c.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/com.brodysoft.sqlitePlugin/src/wp/csharp-sqlite-src/where_c.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ToDo-ionic.iws" />
@@ -66,15 +198,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account-login.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="account-login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/account-login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72484076" vertical-offset="1447" max-vertical-offset="2232">
+            <state vertical-scroll-proportion="-6.322222" vertical-offset="1447" max-vertical-offset="2232">
               <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reset-password.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/reset-password.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22748815" vertical-offset="0" max-vertical-offset="844">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,18 +259,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ionic-angular.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="178413" max-vertical-offset="275424">
-              <caret line="7446" column="0" selection-start-line="7446" selection-start-column="0" selection-end-line="7446" selection-end-column="0" />
-              <folding>
-                <marker date="1420770742321" expanded="true" signature="242037:242055" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ionic.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/lib/ionic/css/ionic.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,8 +272,8 @@
       <file leaf-file-name="account-reg.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/account-reg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.387096" vertical-offset="308" max-vertical-offset="1296">
-              <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+            <state vertical-scroll-proportion="-26.32258" vertical-offset="0" max-vertical-offset="1296">
+              <caret line="34" column="65" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -200,6 +330,7 @@
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/templates/account-reg.html" />
         <option value="$PROJECT_DIR$/www/templates/account-login.html" />
+        <option value="$PROJECT_DIR$/www/templates/reset-password.html" />
       </list>
     </option>
   </component>
@@ -299,7 +430,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,13 +706,20 @@
       <option name="project" value="LOCAL" />
       <updated>1420802190351</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="登录用户记录">
+      <created>1421146604590</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1421146604590</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -521,7 +735,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -555,7 +768,8 @@
     <MESSAGE value="reg&#10;" />
     <MESSAGE value="yonzhuce xieyi" />
     <MESSAGE value="显示密码的指令" />
-    <option name="LAST_COMMIT_MESSAGE" value="显示密码的指令" />
+    <MESSAGE value="登录用户记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录用户记录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -564,11 +778,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/img/priority_level_3_light.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/img/003.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -838,7 +1047,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="178413" max-vertical-offset="275424">
           <caret line="7446" column="0" selection-start-line="7446" selection-start-column="0" selection-end-line="7446" selection-end-column="0" />
           <folding>
-            <marker date="1420770742321" expanded="true" signature="242037:242055" placeholder="..." />
+            <marker date="1420770742321" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -919,22 +1128,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/account-reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.387096" vertical-offset="308" max-vertical-offset="1296">
-          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/account-login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72484076" vertical-offset="1447" max-vertical-offset="2232">
+        <state vertical-scroll-proportion="-6.322222" vertical-offset="1447" max-vertical-offset="2232">
           <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/account-reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.32258" vertical-offset="0" max-vertical-offset="1296">
+          <caret line="34" column="65" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/reset-password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22748815" vertical-offset="0" max-vertical-offset="844">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

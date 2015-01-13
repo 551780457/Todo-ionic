@@ -1,0 +1,49 @@
+<ion-view>
+    <div>
+        <div class="bar bar-header bar-light account-header">
+            <!--<a class="button button-small icon ion-arrow-left-b" href="#/tab/brewers"></a>-->
+            <h1 class="title"><img src="img/logo36.png"/>账号注册</h1>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div name="divreg" class="reg-form">
+            <form class="form-label" name="regform" type="submit">
+                <label class="item item-input">
+                    <span class="form-label-left"><i class="ion-ios7-person"></i></span>
+                    <input class="ctrl-txt" name="username" ng-model="user.username" type="text"
+                           placeholder="请输入邮箱/手机号/用户名(必填)" required>
+                </label>
+                <label class="item item-input">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+                    <input name="password" ng-model="user.password" type="password"
+                           placeholder="密码为6-20个字符,区分大小写(必填)" required view-password>
+                </label>
+                <label class="item item-input">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+                    <input name="pwdConfirm" ng-model="user.pwdConfirm" type="password" placeholder="请确认密码(必填)"
+                           required view-password>
+                </label>
+            </form>
+
+            <div class="row reg-check">
+                <div class="col col-50 reg-check-1">
+                    <ion-checkbox ng-model="viewPassword" ng-init="viewPassword=false">显示密码</ion-checkbox>
+                </div>
+                <div class="col reg-check-2 text-right">
+                    <ion-checkbox ng-model="checked" >同意</ion-checkbox>
+                </div>
+                <div class="col reg-check-3 text-right col-64px">
+                    <a href="#/login">注册协议</a>
+                </div>
+            </div>
+
+
+            <div class="form-action">
+                <button type="submit" ng-model="button" class="ctrl-btn button button-calm" ng-click="doRegister()" ng-disabled="!checked">注册</button>
+            </div>
+            <div class="link">
+                <a href="#/login">已有账号？返回登录</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
