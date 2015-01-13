@@ -40,12 +40,12 @@ angular.module('todo.io.directives', [])
         }
     };
 })
-    .directive('myDer', function () {
+    .directive('viewPassword', function () {
         return {
             restrict: 'A',
             replace:true,
             link: function (scope, element, attr) {
-                scope.$watch('che',
+                scope.$watch('viewPassword',
                     function (newValue) {
                         element[0].type = newValue ? 'text' : 'password';
                     })

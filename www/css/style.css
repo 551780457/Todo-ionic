@@ -1,8 +1,15 @@
 .bar.bar-light.account-header .title{ color: #1A9BDF; font-weight: bold; vertical-align: top}
 .login-form{ padding:0; color:#1A9BDF;}
-.login-form .form-list li{ clear:both; height:35px; padding:0 30px 0 60px; margin-bottom:10px; margin-left:10px; margin-right: 10px; border:1.5px solid #1A9BDF; overflow: hidden; border-radius:4px;}
+.login-form .form-list .item-input{ clear:both; height:35px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF; }
+.login-form .form-list .item-input-wrapper.inner-input{ clear:both; height:35px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF;background: none; }
+.login-form .form-list .item-input-wrapper.inner-input input{flex: inherit; padding-right: 0}
+.login-form .form-list .item-input-list{border: none;margin: 0 10px; max-height:110px;height: auto;}
+.login-form .form-list .item-input-list .item{padding: 0;border: none; background-color: #5A585C;color: #ffffff;}
+.login-form .form-list .item-input-list .label{line-height:inherit;font-size: 14px;padding:5px 0 5px 60px;right: 12px;height: inherit; width: 100%; display: block;}
+.login-form .form-list .item-input-list .label.activated{background-color: rgba(129, 126, 134, 0.69)}
+.login-form .form-list .item-input-list .icon{font-size:20px;right: 8px;pointer-events: auto;}
 .login-form .form-label-left{ float:left; width:50px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
-.login-form .form-label-right{ float:right; width:30px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
+.login-form .form-label-right{ clear:both;float:right; text-align:right; padding-right:10px;position: absolute; right: 17px; top: 10px;font-size: 70%;}
 .form-action{ width:100%; padding:0 10px;}
 .login-form .ctrl-txt{ padding:0 10px}
 .ctrl-btn.button-calm{ display:block; width:100%; text-align:center; color:#FFF; min-height:40px; line-height:30px; border:0; border-radius:4px;margin-top: 10px;}
@@ -21,12 +28,12 @@
 .reg-form .ctrl-btn-right button{min-height:40px; height: 40px ; margin-right: 5px}
 .reg-form .link a{text-decoration:none; padding:10px;}
 .reg-form .link a:first-child{ float:right;}
-.reg-form .reg-check-1 label.item.item-checkbox{padding: 0 0 0 35px; border: none}
-.reg-form .reg-check-2 label.item.item-checkbox{padding: 0  0 0; border: none}
-.reg-form .reg-check-3 {padding: 0 ; border: none;vertical-align: middle;height:30px; line-height:30px; font-size: 16px; margin-right: 15px}
+.reg-form .reg-check-1 label.item.item-checkbox{padding: 0 0 0 35px; border: none; height: 30px;}
 .reg-form .reg-check-1 .item-checkbox .checkbox{left: 0px;}
-.reg-form .reg-check-2 .item-checkbox .checkbox{right: 30px;left: auto;padding: 7px 0 7px 7px;}
-.reg-form .reg-check-2{padding-right: 0;}
+.reg-form .reg-check-2 label.item.item-checkbox{padding: 0  0 0; border: none; height: 30px;}
+.reg-form .reg-check-2 .item-checkbox .checkbox{right: 30px; left: auto; padding:7px 0 7px 7px;}
+.reg-form .reg-check-2 {padding-right: 0;}
+.reg-form .reg-check-3 {padding: 0 ; border: none;vertical-align: middle;height:30px; line-height:38px; font-size: 16px; margin-right: 15px}
 .col-64px {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 64px;
@@ -35,7 +42,9 @@
     -ms-flex: 0 0 64px;
     flex: 0 0 64px;
     max-width: 64px; }
-
+.reg-form .reg-check .item-content.disable-pointer-events {
+    line-height: 1.9;
+}
 
 
 

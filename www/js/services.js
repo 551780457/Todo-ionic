@@ -192,17 +192,23 @@ angular.module('todo.io.services', ['zy.config'])
                     if(result.rows.length > 0) {
                         return DB.query('UPDATE users SET uName = ?, password = ?, token = ?, login_date = ? WHERE uid = ?', [user.uName, user.password, user.token, login_date, user.uid])
                             .then(function(result){
-                                return result;
+                                return self.getUserList();
                             });
                     }  else {
                         return DB.query('INSERT INTO users (uid, uName, password, token, login_date) VALUES (?,?,?,?,?)', [user.uid, user.uName, user.password, user.token, login_date])
                             .then(function(result){
-                                return result;
+                                return self.getUserList();
                             });
                     }
                 });
         };
 
+        self.delete = function (user){
+            return DB.query('DELETE FROM users WHERE uName = ?',[user.uName])
+                .then(function (result) {
+                   return self.getUserList();
+                });
+        }
         self.dropTable = function() {
             DB.query('DROP TABLE IF EXISTS users').then(function(result){});
         }

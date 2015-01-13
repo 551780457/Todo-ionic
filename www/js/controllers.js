@@ -76,20 +76,23 @@ angular.module('todo.io.controllers', [])
                         //var ret = Database.insert(msg['uName'], msg['token']);
                         //console.log(ret);
                         $ionicLoading.hide();
-                        $scope.showAlert('恭喜您，注册成功！', function(){
+                        $scope.showAlert('恭喜您，注册成功！请牢记您的账号和密码！','前往登录',function(){
                             $state.go("login", {}, {reload: true});
                         });
                     } else {
                         $ionicLoading.hide();
                         if(desc == null || desc == ''){
-                            $scope.showAlert('很抱歉,注册失败....' , null);
+                            $scope.showAlert('很抱歉,注册失败....');
+                            User.clear();
                         } else {
-                            $scope.showAlert('注册失败,' + desc, null);
+                            $scope.showAlert('注册失败,' + desc);
+                            User.clear();
                         }
                     }
                 }, function (data) {
                     $ionicLoading.hide();
-                    $scope.showAlert('系统或网络异常，请稍后重试！', function(){});
+                    $scope.showAlert('系统或网络异常，请稍后重试！');
+                    User.clear();
                 });
 
         }
@@ -130,9 +133,11 @@ angular.module('todo.io.controllers', [])
         }
 
         // An alert dialog
-        $scope.showAlert = function(template,success) {
+        $scope.showAlert = function(template,ok,success) {
             var alertPopup = $ionicPopup.alert({
-                template: template
+                template: template,
+                okText: ok, // String (default: 'OK'). The text of the OK button.
+                okType: 'button-calm' // String (default: 'button-positive'). The type of the OK button.
             });
             alertPopup.then(success);
         };
@@ -141,23 +146,57 @@ angular.module('todo.io.controllers', [])
     .controller('LoginCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', '$interval', 'User','Task', 'Database', function ($scope,$state, $ionicPopup, $ionicLoading, $interval, User, Task, Database) {
         $scope.user = {};
         $scope.userList = [];
-        $scope.user.isChecked = true;
+        $scope.user.isSavedUser = true;
         $scope.$on('$ionicView.afterEnter', function () {
             Database.getUserList().then(function(result){
                 $scope.userList = result;
+                console.debug($scope.userList);
                 if(User.getUserName() && User.getUserName() != ''){
                     $scope.user.username = User.getUserName();
                 } else if ($scope.userList.length > 0){
-                    $scope.user.username = $scope.userList[0]['uName'];
-                    $scope.user.password = $scope.userList[0]['password'];
-                    if($scope.userList[0]['password'] == ''){
-                        $scope.user.isChecked = false;
-                    }
+                    $scope.selectUser( $scope.userList[0]);
                 }
             });
         })
         $scope.user.btnText = '获取验证码';
+        // 获取验证码按钮是否可用
         $scope.user.isEnabled = false;
+        $scope.user.listStyle = "ion-chevron-down";
+
+        $scope.showUserList = function(isShow){
+            $scope.user.list = isShow;
+            if($scope.user.list){
+                $scope.user.listStyle = "ion-chevron-up";
+            } else {
+                $scope.user.listStyle = "ion-chevron-down";
+            }
+        }
+
+        $scope.selectUser = function(user){
+            $scope.user.username = user.uName;
+            $scope.user.password = user.password;
+            if(user.password == ''){
+                $scope.user.isSavedUser = false;
+            } else{
+                $scope.user.isSavedUser = true;
+            }
+            $scope.showUserList(false);
+        }
+
+        $scope.deleteUser = function(user){
+            if(user.uName == $scope.user.username){
+                $scope.user.username = "";
+                $scope.user.password = "";
+            }
+            $scope.userList = Database.delete(user).then(function(result){
+                $scope.userList = result;
+                if(result.length <= 0){
+                    $scope.showUserList(false);
+                }
+                console.debug(result);
+            });
+
+        }
 
         $scope.getAuthCode = function () {
 
@@ -230,15 +269,19 @@ angular.module('todo.io.controllers', [])
                         User.setUser(msg);
                         console.log('登录后的User:\n' + JSON.stringify(User.getUser()));
                         var login_date = new Date().getTime();
-                        console.error($scope.user.isChecked);
-                        if($scope.user.isChecked == true) {
-                            var ret = Database.insert(User.getUser(), login_date);
-                            console.log('存储结果1：' + JSON.stringify(ret));
+                        console.error($scope.user.isSavedUser);
+                        if($scope.user.isSavedUser == true) {
+                            Database.insert(User.getUser(), login_date).then(function(result){
+                                $scope.userList = result;
+                                console.log('存储结果1：' + JSON.stringify(result));
+                            });
+
                         } else {
                             User.setPassword('');
-                            var ret = Database.insert(User.getUser(), login_date);
-                            console.error(User.getUser());
-                            console.log('存储结果2：' + JSON.stringify(ret));
+                            Database.insert(User.getUser(), login_date).then(function(result){
+                                $scope.userList = result;
+                                console.log('存储结果1：' + JSON.stringify(result));
+                            });
                         }
                         $ionicLoading.hide();
                         $scope.toast(msg['uName'] + ', 欢迎回来！');
@@ -252,7 +295,7 @@ angular.module('todo.io.controllers', [])
                     }
                 }, function (data) {
                     $ionicLoading.hide();
-                    $scope.showAlert('系统或网络异常，请稍后重试！', function(){});
+                    $scope.showAlert('系统或网络异常，请稍后重试！', null);
                 });
         }
 
@@ -287,9 +330,11 @@ angular.module('todo.io.controllers', [])
         }
 
         // An alert dialog
-        $scope.showAlert = function(template,success) {
+        $scope.showAlert = function(template,ok,success) {
             var alertPopup = $ionicPopup.alert({
-                template: template
+                template: template,
+                okText: ok, // String (default: 'OK'). The text of the OK button.
+                okType: 'button-calm' // String (default: 'button-positive'). The type of the OK button.
             });
             alertPopup.then(success);
         };

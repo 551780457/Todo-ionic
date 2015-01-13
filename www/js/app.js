@@ -3,7 +3,7 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
     .run(function ($ionicPlatform, $rootScope , DB) {
 
 
-        $rootScope.site = 'http://220.243.139.183:8068/auser/action/do.htm';
+        $rootScope.site = 'http://172.16.44.191:8080/auser/action/do.htm';
         $ionicPlatform.ready(function () {
             DB.init();
             if (window.cordova && window.cordova.plugins.Keyboard) {
