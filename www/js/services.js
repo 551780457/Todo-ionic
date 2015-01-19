@@ -111,6 +111,85 @@ angular.module('todo.io.services', ['zy.config'])
         }
     }])
 
+    .factory('UserTO', [function () {
+        // Define the constructor function.
+        function UserTO( ) {
+            this.uid = 0,
+            this.token = '',
+            this.uName = '',
+            this.nickName = '',
+            this.password = '',
+            this.mobile = '',
+            this.mail = '',
+            this.question = '',
+            this.answer = '',
+            this.version = 'papa_web',
+            this.imei = 'test',//ZYDevice.uuid,
+            this.authCode = '',
+            this.flag = -1
+        }
+        // Define the "instance" methods using the prototype
+        // and standard prototypal inheritance.
+        UserTO.prototype = {
+            setUsername: function (username) {
+                this.uName = username;
+            },
+
+            setPassword: function (password) {
+                this.password = password;
+            },
+
+            setFlag: function (flag) {
+                switch(flag){
+                    case 'REG':
+                        this.flag = 0;
+                        break;
+                    case 'LOGIN':
+                        this.flag = 1;
+                        break;
+                    case 'VERIFYUSER':
+                        this.flag = 9;
+                        break;
+                }
+
+            },
+            setUser: function (user) {
+                this.uid = user['uid'];
+                this.uName = user['uName'];
+                this.token = user['token'];
+                this.question = user['question'];
+                this.mobile = user['mobile'];
+
+            },
+
+            getUserName : function () {
+                return this.uName;
+            },
+
+            getFirstName: function() {
+
+                return( this.firstName );
+
+            },
+
+            getFullName: function() {
+
+                return( this.firstName + " " + this.lastName );
+
+            }
+        };
+
+        // Define the "class" / "static" methods. These are
+        // utility methods on the class itself; they do not
+        // have access to the "this" reference.
+        UserTO.RESULT_OK = 100;
+        UserTO.RESULT_99 = 99;
+
+        // Return constructor - this is what defines the actual
+        // injectable in the DI framework.
+        return(UserTO);
+    }])
+
     // DB wrapper
     .factory('DB', function ($q, DB_CONFIG) {
         var self = this;

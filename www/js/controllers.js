@@ -355,9 +355,119 @@ angular.module('todo.io.controllers', [])
             $scope.display_tel_reg = "display:block";
         }
 
-
         $scope.toLogin();
 
     }])
 
 
+    .controller('PasCtrl',[ '$scope', '$state', '$ionicPopup','$ionicLoading', '$ionicHistory','UserTO','Task','Database', function ($scope,$state, $ionicPopup, $ionicLoading, $ionicHistory,UserTO, Task, Database) {
+        $scope.user = {};
+
+        $scope.setInputEmpty = function(){
+            $scope.user.username = "";
+        }
+
+        $scope.toPrevious = function(){
+            $ionicHistory.goBack();
+        }
+
+        $scope.toNext = function(){
+            if(!$scope.checkInput()){
+                return;
+            }
+
+            $ionicLoading.show({
+                noBackdrop:true,
+                template: '正在提交，请稍候...'
+            });
+
+            var user = new UserTO();
+            user.setUsername($scope.user.username);
+            user.setFlag('VERIFYUSER');
+            console.log('登录前的User:\n' + JSON.stringify(user));
+            Task.getUserInfo(user)
+                .then(function (data) {
+                    var res = angular.fromJson(data.data);
+                    console.log('网络回调:\n' + JSON.stringify(res));
+                    var code = res['code'];
+                    var desc = res['desc'];
+                    var msg = angular.fromJson(res['msg']);
+
+                    if(code == UserTO.RESULT_OK || code == UserTO.RESULT_99){
+                        user.setUser(msg);
+                        console.log('登录后的User:\n' + JSON.stringify(user));
+                        if(user.mobile) {
+
+                        } else {
+                            var params = {
+                                from: 'PasCtrl',
+                                data:user
+                            };
+                            $state.go('verifytel',params);
+                            //$scope.user.isAccountError = true;
+                        }
+                        $ionicLoading.hide();
+                    } else {
+                        $ionicLoading.hide();
+                        if(desc == null || desc == ''){
+                            $scope.showAlert('验证失败，请重新输入账号进行验证' , null);
+                        } else {
+                            $scope.showAlert('验证失败，' + desc, null);
+                        }
+                    }
+                }, function (data) {
+                    $ionicLoading.hide();
+                    $scope.showAlert('系统或网络异常，请稍后重试！', null);
+                });
+        }
+
+        $scope.checkInput = function () {
+            var reg = /[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-@]{6,20}$/;
+            if(!$scope.user.username){
+                $scope.toast("请输入正确的登录账号或手机")
+                return false;
+            }
+
+            if (!reg.test($scope.user.username)){
+                $scope.toast("用户名应为6-30个字符，只能包含数字、字母和“_”、“@”、“.”");
+                return false;
+            }
+
+            //if(!$scope.user.password){
+            //    $scope.toast("密码不能为空，请检查后重新填写")
+            //    return false;
+            //}
+            //
+            //var reg2 = /[^\u4e00-\u9fa5]{6,20}$/;
+            //if(!reg2.test($scope.user.password)) {
+            //    $scope.toast("密码应为6-20个字符,区分大小写,不能为中文")
+            //    return false;
+            //}
+            return true;
+        }
+
+        $scope.toast = function (msg) {
+            alert(msg);
+            //window.plugins.toast.showShortTop(msg);
+        }
+
+        // An alert dialog
+        $scope.showAlert = function(template,ok,success) {
+            var alertPopup = $ionicPopup.alert({
+                template: template,
+                okText: ok, // String (default: 'OK'). The text of the OK button.
+                okType: 'button-calm' // String (default: 'button-positive'). The type of the OK button.
+            });
+            alertPopup.then(success);
+        };
+    }])
+
+    .controller('VerifyTelCtrl',[ '$scope', '$state','$stateParams', '$ionicPopup','$ionicLoading', '$ionicHistory','UserTO','Task','Database', function ($scope,$state,$stateParams, $ionicPopup, $ionicLoading, $ionicHistory,UserTO, Task, Database) {
+        $scope.user = {};
+        console.debug($stateParams);
+
+        $scope.toPrevious = function(){
+            $ionicHistory.goBack();
+        }
+
+    }])

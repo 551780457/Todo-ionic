@@ -21,7 +21,6 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
 
         $stateProvider
             .state('login', {
-
                 url: "/",
                 templateUrl: "templates/account-login.html",
                 controller: 'LoginCtrl'
@@ -31,6 +30,18 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
                 url: '/reg',
                 templateUrl: "templates/account-reg.html",
                 controller: 'AccountCtrl'
+            })
+
+            .state('pas',{
+                url:"/password/rest",
+                templateUrl: "templates/password-reset.html",
+                controller: 'PasCtrl'
+            })
+            .state('verifytel', {
+                url: '/password/verifytel',
+                params:{from:null,data:null },
+                templateUrl: 'templates/verify-tel.html',
+                controller: 'VerifyTelCtrl'
             })
 
             .state('tabs', {
@@ -43,7 +54,7 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
                 url: "/home",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/user_center.html",
+                        templateUrl: "templates/user-center.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
@@ -61,7 +72,7 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
                 url: "/service",
                 views: {
                     'service-tab': {
-                        templateUrl: "templates/user_center.html",
+                        templateUrl: "templates/user-center.html",
                         controller: 'UserCenterCtrl'
                     }
                 }

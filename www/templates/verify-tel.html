@@ -1,0 +1,33 @@
+<ion-view>
+    <div>
+        <div class="bar bar-header bar-light account-header">
+            <h1 class="title"><img src="img/logo36.png"/>密码找回</h1>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div name="divreg" class="reg-form">
+            <form class="form-label" name="regform" type="submit">
+                <div class="item item-input first-input">
+                    <span class="form-label-left"><i class="ion-ios7-telephone"></i></span>
+                    <input name="mobile" ng-model="user.mobile" type="tel" placeholder="请输入手机号码">
+                </div>
+
+                <div class="item item-input ctrl-btn-right" ><!--ng-show="!regform.mobile.$error.required"-->
+                    <span class="form-label-left"><i class="ion-iphone"></i></span>
+                    <label class="item-input-wrapper inner-input">
+                        <input name="authCode" ng-model="user.authCode" type="text" placeholder="请输入验证码">
+                    </label>
+                    <button class=" button button-balanced" ng-click="getAuthCode()" ng-disabled="user.isEnabled">{{user.btnText}}</button>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="ctrl-btn button button-light" ng-click="toPrevious()">上一步</button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="ctrl-btn button button-calm" ng-click="toNext()" ng-disabled="pas.isAccountError">下一步</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
