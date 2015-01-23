@@ -1,16 +1,16 @@
 .bar.bar-light.account-header .title{ color: #1A9BDF; font-weight: bold; vertical-align: top}
 
 .login-form{ padding:0; color:#1A9BDF;}
-.login-form .form-list .item-input{ clear:both; height:35px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF; }
-.login-form .form-list .item-input-wrapper.inner-input{ clear:both; height:35px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF;background: none; }
+.login-form .form-list .item-input{ clear:both; height:45px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF; }
+.login-form .form-list .item-input-wrapper.inner-input{ clear:both; height:45px; padding:0 0 0 60px;margin:5px 10px 2px 10px;border:1.5px solid #1A9BDF;  overflow: hidden; border-radius:4px;color:#1A9BDF;background: none; }
 .login-form .form-list .item-input-wrapper.inner-input input{flex: inherit; padding-right: 0}
 .login-form .form-list .item-input-list{border: none;margin: 0 10px; max-height:110px;height: auto;}
 .login-form .form-list .item-input-list .item{padding: 0;border: none; background-color: #5A585C;color: #ffffff;}
 .login-form .form-list .item-input-list .label{line-height:inherit;font-size: 14px;padding:5px 0 5px 60px;right: 12px;height: inherit; width: 100%; display: block;}
 .login-form .form-list .item-input-list .label.activated{background-color: rgba(129, 126, 134, 0.69)}
 .login-form .form-list .item-input-list .icon{font-size:20px;right: 8px;pointer-events: auto;}
-.login-form .form-label-left{ float:left; width:50px; text-align:right; padding-right:10px; margin-left:-60px; font-size:30px;}
-.login-form .form-label-right{ clear:both;float:right; text-align:right; padding-right:10px;position: absolute; right: 17px; top: 10px;font-size: 70%;}
+.login-form .form-label-left{display:block; width:50px; text-align:center; padding-right:10px; margin-left:-60px; font-size:30px;}
+.login-form .form-label-right{ clear:both;float:right; text-align:right; padding-right:10px;position: absolute; right: 17px; top: 17px;font-size: 70%;}
 .form-action{ width:100%; padding:0 10px;}
 .login-form .ctrl-txt{ padding:0 10px}
 .ctrl-btn.button-calm{ display:block; width:100%; text-align:center; color:#FFF; min-height:40px; line-height:30px; border:0; border-radius:4px;margin-top: 10px;}
@@ -20,20 +20,24 @@
 .login-form .link a{text-decoration:none; padding:0px 10px 10px 10px;}
 .login-form .link a:first-child{ float:left;}
 .login-form .link a:last-child{ float:right;}
+.form-cont {width: 100%}
+.ion-ios7-locked{font-size: 28px}
 
 .reg-form .form-label{border: none; padding: 1px 10px}
 .reg-form .form-label .item-input {min-height: 58px; height: 59px}
-.reg-form .form-label .item-input-wrapper.inner-input {padding-left: 0; background: none;}
+.reg-form .form-label .item-input-wrapper.inner-input {padding-left: 0; padding-right:0 ;background: none;}
+.reg-form .form-label .item-input-wrapper~.button { margin-left: 0  }
 .reg-form .form-label .item-input-wrapper.inner-input input{flex: inherit; padding-right: 0}
 .reg-form .form-label-left {display:block; color:#1A9BDF;font-size: 30px; text-align: center; padding-right: 15px; width: 40px;}
+.reg-form .form-label .item-input input{padding-right: 0;}
 .reg-form .form-action button{margin-top: 0;}
 .reg-form .ctrl-btn-right button{min-height:40px; height: 40px ; margin-right: 5px}
 .reg-form .link a{text-decoration:none; padding:10px;}
 .reg-form .link a:first-child{ float:right;}
 .reg-form .reg-check-1 label.item.item-checkbox{padding: 0 0 0 35px; border: none; height: 30px;}
 .reg-form .reg-check-1 .item-checkbox .checkbox{left: 0px;}
-.reg-form .reg-check-2 label.item.item-checkbox{padding: 0  0 0; border: none; height: 30px;}
-.reg-form .reg-check-2 .item-checkbox .checkbox{right: 30px; left: auto; padding:7px 0 7px 7px;}
+.reg-form .reg-check-2 label.item.item-checkbox{padding: 0 0 0 0; border: none; height: 30px;}
+.reg-form .reg-check-2 .item-checkbox .checkbox{right: 30px; left: auto; padding:7px 1px 7px 7px;}
 .reg-form .reg-check-2 {padding-right: 0;}
 .reg-form .reg-check-3 {padding: 0 ; border: none;vertical-align: middle;height:30px; line-height:38px; font-size: 16px; margin-right: 15px}
 .col-64px {
@@ -50,10 +54,17 @@
 
 
 .pas-reset-title{color: #444444;margin:5px 10px 15px 10px; font-size: 16px;}
-.pas-account-error{margin: 0 10px; color: gray; font-size: 14px}
+.pas-account-error{margin: 0 10px; color: gray; font-size: 15px}
 .pas-account-error i{margin: 0 0 0 20px;}
-.login-form .form-label-right-pas{ clear:both;float:right; text-align:right; padding-right:10px;position: fixed; right: 17px; top: 43px;font-size: 70%;}
+.pas-verify-tel{margin: 0 0 10px 0 ; color: gray; font-size: 16px}
+.login-form .form-label-right-pas{ clear:both;float:right; text-align:right; padding-right:10px;position: absolute; right: 17px; top: 50px;font-size: 70%;}
+.checkbox-right{margin: 5px 10px}
+.checkbox-right label.item-checkbox{ padding: 3px 0 0 1px; border: none; height: 30px;}
+.checkbox-right .item-checkbox .checkbox{right: 65px; left: auto; padding:7px 1px 7px 7px;}
 
+
+.pas-bind-tips .tips{margin: 0 10px; color: #c9412f; font-size: 15px}
+.pas-bind-tips .btn{margin: 0 10px;}
 
 
 

@@ -1,0 +1,78 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\development\\Node\\\\node.exe',
+1 verbose cli   'D:\\development\\Node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'ngCordova' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink D:\development\Node\\node.exe
+5 verbose cache add [ 'ngCordova', null ]
+6 verbose cache add name=undefined spec="ngCordova" args=["ngCordova",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'ngCordova',
+7 verbose parsed url   path: 'ngCordova',
+7 verbose parsed url   href: 'ngCordova' }
+8 silly lockFile c4cc40e6-ngCordova ngCordova
+9 verbose lock ngCordova C:\Users\sandy\AppData\Roaming\npm-cache\c4cc40e6-ngCordova.lock
+10 silly lockFile c4cc40e6-ngCordova ngCordova
+11 silly lockFile c4cc40e6-ngCordova ngCordova
+12 verbose addNamed [ 'ngCordova', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile e8f61dac-ngCordova ngCordova@
+15 verbose lock ngCordova@ C:\Users\sandy\AppData\Roaming\npm-cache\e8f61dac-ngCordova.lock
+16 silly addNameRange { name: 'ngCordova', range: '*', hasData: false }
+17 verbose request where is /ngCordova
+18 verbose request registry http://registry.cnpmjs.org/
+19 verbose request id b99525e8500f9c7c
+20 verbose url raw /ngCordova
+21 verbose url resolving [ 'http://registry.cnpmjs.org/', './ngCordova' ]
+22 verbose url resolved http://registry.cnpmjs.org/ngCordova
+23 verbose request where is http://registry.cnpmjs.org/ngCordova
+24 info trying registry request attempt 1 at 19:07:03
+25 http GET http://registry.cnpmjs.org/ngCordova
+26 http 404 http://registry.cnpmjs.org/ngCordova
+27 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+27 verbose headers   date: 'Thu, 22 Jan 2015 11:05:05 GMT',
+27 verbose headers   'content-type': 'application/json; charset=utf-8',
+27 verbose headers   'content-length': '51',
+27 verbose headers   'x-powered-by': 'koa',
+27 verbose headers   'x-readtime': '2174',
+27 verbose headers   'x-cache': 'MISS from adsl',
+27 verbose headers   'x-cache-lookup': 'MISS from adsl:80',
+27 verbose headers   via: '1.0 adsl:80 (squid/2.6.STABLE21)',
+27 verbose headers   connection: 'close' }
+28 silly registry.get cb [ 404,
+28 silly registry.get   { server: 'nginx/1.4.6 (Ubuntu)',
+28 silly registry.get     date: 'Thu, 22 Jan 2015 11:05:05 GMT',
+28 silly registry.get     'content-type': 'application/json; charset=utf-8',
+28 silly registry.get     'content-length': '51',
+28 silly registry.get     'x-powered-by': 'koa',
+28 silly registry.get     'x-readtime': '2174',
+28 silly registry.get     'x-cache': 'MISS from adsl',
+28 silly registry.get     'x-cache-lookup': 'MISS from adsl:80',
+28 silly registry.get     via: '1.0 adsl:80 (squid/2.6.STABLE21)',
+28 silly registry.get     connection: 'close' } ]
+29 silly lockFile e8f61dac-ngCordova ngCordova@
+30 silly lockFile e8f61dac-ngCordova ngCordova@
+31 error 404 404 Not Found: ngCordova
+31 error 404
+31 error 404 'ngCordova' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Windows_NT 6.2.9200
+33 error command "D:\\development\\Node\\\\node.exe" "D:\\development\\Node\\node_modules\\npm\\bin\\npm-cli.js" "install" "ngCordova"
+34 error cwd D:\web\ToDo-ionic
+35 error node -v v0.10.33
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]

@@ -1,6 +1,7 @@
 angular.module('zy.config', [])
     .constant('DB_CONFIG', {
         name: 'zyfc.db',
+        version: '1.0',
         tables: [
             {
                 name: 'users',

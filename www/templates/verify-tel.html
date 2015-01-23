@@ -1,31 +1,59 @@
 <ion-view>
     <div>
         <div class="bar bar-header bar-light account-header">
-            <h1 class="title"><img src="img/logo36.png"/>密码找回</h1>
+            <h1 class="title"><img src="img/logo36.png"/>{{user.title}}</h1>
         </div>
     </div>
     <ion-content class="has-header">
         <div name="divreg" class="reg-form">
             <form class="form-label" name="regform" type="submit">
+                <div class="pas-verify-tel" ng-show="user.fromPas">
+                    <i class="icon ion-information-circled balanced"></i>
+                    验证您已绑定的手机后可重置密码
+                </div>
                 <div class="item item-input first-input">
                     <span class="form-label-left"><i class="ion-ios7-telephone"></i></span>
-                    <input name="mobile" ng-model="user.mobile" type="tel" placeholder="请输入手机号码">
+                    <input name="mobile" ng-model="user.mobile" type="tel" placeholder="请输入手机号码"
+                           ng-readonly="user.fromPas">
                 </div>
 
-                <div class="item item-input ctrl-btn-right" ><!--ng-show="!regform.mobile.$error.required"-->
+                <div class="item item-input ctrl-btn-right"><!--ng-show="!regform.mobile.$error.required"-->
                     <span class="form-label-left"><i class="ion-iphone"></i></span>
                     <label class="item-input-wrapper inner-input">
                         <input name="authCode" ng-model="user.authCode" type="text" placeholder="请输入验证码">
                     </label>
-                    <button class=" button button-balanced" ng-click="getAuthCode()" ng-disabled="user.isEnabled">{{user.btnText}}</button>
+                    <button class=" button button-balanced" ng-click="getAuthCode()" ng-disabled="user.authDisable">
+                        {{user.btnText}}
+                    </button>
                 </div>
             </form>
-            <div class="row">
+            <div class="row" ng-show="user.fromPas">
                 <div class="col">
                     <button type="submit" class="ctrl-btn button button-light" ng-click="toPrevious()">上一步</button>
                 </div>
                 <div class="col">
-                    <button type="submit" class="ctrl-btn button button-calm" ng-click="toNext()" ng-disabled="pas.isAccountError">下一步</button>
+                    <button type="submit" class="ctrl-btn button button-calm" ng-click="toNext()">下一步</button>
+                </div>
+            </div>
+
+            <div ng-show="!user.fromPas">
+                <div class="row reg-check" >
+                    <div class="col reg-check-2 text-right">
+                        <ion-checkbox ng-model="agreement" >同意</ion-checkbox>
+                    </div>
+                    <div class="col reg-check-3 text-right col-64px">
+                        <a href="" ng-click="cliced()">用户协议</a>
+                    </div>
+                </div>
+                <div class="form-action" ng-show="user.fromReg">
+                    <button type="submit" class="ctrl-btn button button-calm" ng-click="doRegister()" ng-disabled="!agreement">提交注册</button>
+                </div>
+                <div class="form-action" ng-show="!user.fromReg">
+                    <button type="submit" class="ctrl-btn button button-calm" ng-click="doSubmitBind()" ng-disabled="!agreement">提交绑定</button>
+                </div>
+
+                <div class="link" ng-show="user.fromReg">
+                    <a href="#" ng-click="toPrevious()">已有账号？返回登录</a>
                 </div>
             </div>
         </div>

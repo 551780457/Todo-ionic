@@ -1,6 +1,6 @@
 angular.module('todo.io.services', ['zy.config'])
 
-    .service('Task', function task($http, $q, $rootScope) {
+    .service('Task', ['$http','$q','$rootScope',function task($http, $q, $rootScope) {
         var task = this;
 
         task.getUserInfo = function (user) {
@@ -26,7 +26,7 @@ angular.module('todo.io.services', ['zy.config'])
             return defer.promise;
         }
         return task;
-    })
+    }])
 
     .factory('User', [function () {
         var UserInfo = {
@@ -39,42 +39,21 @@ angular.module('todo.io.services', ['zy.config'])
             mail: '',
             question: '',
             answer: '',
-            version: 'papa_web',
-            imei: 'test',//ZYDevice.uuid,
+            //version: 'papa_web',
+            //imei: 'test',
+            version :'papa_android',
+            imei : ZYDevice.uuid,
             authCode: '',
             flag: -1
         };
 
-        var result_ok = 100;
-        var result_99 = 99;
         return {
-
-            RESULT_OK: function () {
-                return result_ok;
-            },
-
-            RESULT_99: function () {
-                return result_99;
-            },
-
             setUsername: function (username) {
                 UserInfo.uName = username;
             },
 
             setPassword: function (password) {
                 UserInfo.password = password;
-            },
-
-            setFlag: function (flag) {
-               switch(flag){
-                   case 'REG':
-                       UserInfo.flag = 0;
-                       break;
-                   case 'LOGIN':
-                       UserInfo.flag = 1;
-                       break;
-               }
-
             },
 
             setUser: function (user) {
@@ -85,6 +64,7 @@ angular.module('todo.io.services', ['zy.config'])
                 UserInfo.mobile = user['mobile'];
 
             },
+
             getUser: function () {
                 return UserInfo;
             },
@@ -103,8 +83,11 @@ angular.module('todo.io.services', ['zy.config'])
                 UserInfo.mail = '',
                 UserInfo.question = '',
                 UserInfo.answer = '',
-                UserInfo.version = 'papa_web',
-                UserInfo.imei = 'test',//ZYDevice.uuid,
+                //UserInfo.version = 'papa_web',
+                //UserInfo.imei = 'test',
+                UserInfo.version = 'papa_android',
+                UserInfo.imei = ZYDevice.uuid,
+
                 UserInfo.authCode = '',
                 UserInfo.flag = -1
             }
@@ -113,7 +96,7 @@ angular.module('todo.io.services', ['zy.config'])
 
     .factory('UserTO', [function () {
         // Define the constructor function.
-        function UserTO( ) {
+        function UserTO() {
             this.uid = 0,
             this.token = '',
             this.uName = '',
@@ -124,10 +107,12 @@ angular.module('todo.io.services', ['zy.config'])
             this.question = '',
             this.answer = '',
             this.version = 'papa_web',
-            this.imei = 'test',//ZYDevice.uuid,
+            this.imei = ZYDevice.uuid,
+            //this.imei = 'test';//
             this.authCode = '',
             this.flag = -1
         }
+
         // Define the "instance" methods using the prototype
         // and standard prototypal inheritance.
         UserTO.prototype = {
@@ -140,42 +125,35 @@ angular.module('todo.io.services', ['zy.config'])
             },
 
             setFlag: function (flag) {
-                switch(flag){
-                    case 'REG':
-                        this.flag = 0;
-                        break;
-                    case 'LOGIN':
-                        this.flag = 1;
-                        break;
-                    case 'VERIFYUSER':
-                        this.flag = 9;
-                        break;
-                }
-
+                this.flag = flag;
             },
-            setUser: function (user) {
-                this.uid = user['uid'];
-                this.uName = user['uName'];
-                this.token = user['token'];
-                this.question = user['question'];
-                this.mobile = user['mobile'];
 
+            setAuthCode: function(authCode) {
+                this.authCode = authCode;
+            },
+
+            setMobile: function(tel) {
+                this.mobile = tel;
+            },
+
+            setUser: function (user) {
+                this.uid =  typeof(user['uid']) == "undefined" ? 0:user['uid'];
+                this.token =  typeof(user['token']) == "undefined" ? '':user['token'];
+                this.uName = typeof(user['uName']) == "undefined" ? '':user['uName'];
+                this.nickName =  typeof(user['nickName']) == "undefined" ? '':user['nickName'];
+                this.password =  typeof(user['password']) == "undefined" ? '':user['password'];
+                this.mobile = typeof(user['mobile']) == "undefined" ? '':user['mobile'];
+                this.mail = typeof(user['mail']) == "undefined" ? '':user['mail'];
+                this.question = typeof(user['question']) == "undefined" ? '':user['question'];
+                this.answer = typeof(user['answer']) == "undefined" ? '':user['answer'];
+                this.version = 'papa_web',
+                this.imei = typeof(user['imei']) == "undefined" ? '':user['imei'];
+                this.authCode = typeof(user['authCode']) == "undefined" ? '':user['authCode'];
+                this.flag = user['flag']
             },
 
             getUserName : function () {
                 return this.uName;
-            },
-
-            getFirstName: function() {
-
-                return( this.firstName );
-
-            },
-
-            getFullName: function() {
-
-                return( this.firstName + " " + this.lastName );
-
             }
         };
 
@@ -184,6 +162,14 @@ angular.module('todo.io.services', ['zy.config'])
         // have access to the "this" reference.
         UserTO.RESULT_OK = 100;
         UserTO.RESULT_99 = 99;
+        UserTO.SEND_CODE_RESET_PAS = 13;
+        UserTO.SEND_CODE_BIND_TEL = 12;
+        UserTO.LOGIN = 1;
+        UserTO.REG = 0;
+        UserTO.VERIFY_USER = 9;
+        UserTO.SUBMIT_AUTHCODE = 14;
+        UserTO.RESET_PASSWORD = 5;
+        UserTO.BIND_MOBILE = 2;
 
         // Return constructor - this is what defines the actual
         // injectable in the DI framework.
@@ -191,14 +177,18 @@ angular.module('todo.io.services', ['zy.config'])
     }])
 
     // DB wrapper
-    .factory('DB', function ($q, DB_CONFIG) {
+    .factory('DB',  ['$q','DB_CONFIG', '$cordovaSQLite', function ($q, DB_CONFIG, $cordovaSQLite) {
         var self = this;
         self.db = null;
 
-        self.init = function () {
-            // Use self.db = window.sqlitePlugin.openDatabase({name: DB_CONFIG.name}); in production
-            self.db = window.openDatabase(DB_CONFIG.name, '1.0', 'database', -1);
-            //self.db = window.sqlitePlugin.openDatabase(DB_CONFIG.name, '1.0', 'database', -1);
+        self.init = function ($cordovaSQLite) {
+             if (window.navigator.platform == 'Win32') {
+                console.log('websql');
+                self.db = openDatabase(DB_CONFIG.name, DB_CONFIG.version, 'database', -1);
+            } else {
+                console.log('sqlite');
+                self.db = window.sqlitePlugin.openDatabase({ name: DB_CONFIG.name });
+            }
 
             angular.forEach(DB_CONFIG.tables, function (table) {
                 var columns = [];
@@ -207,15 +197,15 @@ angular.module('todo.io.services', ['zy.config'])
                 });
 
                 var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
+                //$cordovaSQLite.execute(self.db ,query);
                 self.query(query);
-                console.log('Table ' + table.name + ' initialized');
+
             });
         };
 
         self.query = function (query, bindings) {
             bindings = typeof bindings !== 'undefined' ? bindings : [];
             var deferred = $q.defer();
-
             self.db.transaction(function (transaction) {
                 transaction.executeSql(query, bindings, function (transaction, result) {
                     deferred.resolve(result);
@@ -223,14 +213,13 @@ angular.module('todo.io.services', ['zy.config'])
                     deferred.reject(error);
                 });
             });
-
             return deferred.promise;
         };
 
         self.fetchAll = function (result) {
             var output = [];
 
-            for (var i = 0; i < result.rows.length; i++) {
+            for (var i = 0; i < result.rows.length && i < 5; i++) {
                 output.push(result.rows.item(i));
             }
 
@@ -242,9 +231,9 @@ angular.module('todo.io.services', ['zy.config'])
         };
 
         return self;
-    })
+    }])
     // Resource service example
-    .factory('Database', function (DB) {
+    .factory('Database', ['DB', function (DB) {
         var self = this;
 
         self.all = function () {
@@ -262,10 +251,15 @@ angular.module('todo.io.services', ['zy.config'])
         };
 
         self.insert = function (user, login_date) {
-            //var password = ZYCallbackPlugin.desEncrypt(user.password, function(res){
-            //    return res;
-            //});
-            //console.log(password);
+            var password = user.password;
+            if (window.navigator.platform == 'Win32') {
+                console.debug(password);
+            } else {
+                var password = ZYCallbackPlugin.desEncrypt(user.password, function(res){
+                    return res;
+                });
+                console.debug(password);
+            }
             return DB.query('SELECT * FROM users WHERE uid=?', [user.uid])
                 .then(function(result){
                     if(result.rows.length > 0) {
@@ -293,6 +287,27 @@ angular.module('todo.io.services', ['zy.config'])
         }
 
         return self;
-    });
+    }])
 
+    .factory('PluginUtil',['$ionicPopup', function($ionicPopup){
+        var self = this;
+        self.toastShortTop = function(msg){
+            if (window.navigator.platform == 'Win32') {
+                alert(msg);
+            } else {
+                window.plugins.toast.showShortTop(msg);
+            }
+        };
 
+        // An alert dialog
+        self.showAlert = function(template,ok,success) {
+            var alertPopup = $ionicPopup.alert({
+                template: template,
+                okText: ok == null ? '确定':ok,// String (default: 'OK'). The text of the OK button.
+                okType: 'button-calm' // String (default: 'button-positive'). The type of the OK button.
+            });
+            alertPopup.then(success);
+        };
+
+        return self;
+    }]);

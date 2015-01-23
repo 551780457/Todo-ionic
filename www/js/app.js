@@ -1,17 +1,20 @@
-angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'todo.io.controllers', 'nsPopover'])
+var db = null;
 
-    .run(function ($ionicPlatform, $rootScope , DB) {
+angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'todo.io.controllers', 'nsPopover'])
+
+    .run(function ($ionicPlatform, $rootScope, $cordovaSplashscreen, DB,$cordovaSQLite) {
 
 
         $rootScope.site = 'http://172.16.44.191:8080/auser/action/do.htm';
         $ionicPlatform.ready(function () {
-            DB.init();
+            DB.init($cordovaSQLite);
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
             if (window.StatusBar) {
                 StatusBar.styleDefault();
             }
+            $cordovaSplashscreen.hide()
         });
     })
 
@@ -26,22 +29,36 @@ angular.module('todo.io', ['ionic','zy.config', 'todo.io.directives', 'todo.io.f
                 controller: 'LoginCtrl'
             })
 
+            .state('telbindtips', {
+                url: '/password/bindtips',
+                templateUrl: "templates/tel-bind-tips.html",
+                controller: 'TelBindTipsCtrl'
+            })
+
             .state('reg', {
                 url: '/reg',
                 templateUrl: "templates/account-reg.html",
                 controller: 'AccountCtrl'
             })
 
-            .state('pas',{
-                url:"/password/rest",
-                templateUrl: "templates/password-reset.html",
-                controller: 'PasCtrl'
+            .state('verifyuser',{
+                url:"/password/verifyuser",
+                templateUrl: "templates/verify-user.html",
+                controller: 'VerifyUserCtrl'
             })
+
             .state('verifytel', {
                 url: '/password/verifytel',
                 params:{from:null,data:null },
                 templateUrl: 'templates/verify-tel.html',
                 controller: 'VerifyTelCtrl'
+            })
+
+            .state('pasreset',{
+                url: '/password/pasreset',
+                params:{from:null,data:null },
+                templateUrl: 'templates/pas-reset.html',
+                controller: 'PasCtrl'
             })
 
             .state('tabs', {

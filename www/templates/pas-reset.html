@@ -1,0 +1,39 @@
+<ion-view>
+    <div>
+        <div class="bar bar-header bar-light account-header">
+            <!--<a class="button button-small icon ion-arrow-left-b" href="#/tab/brewers"></a>-->
+            <h1 class="title"><img src="img/logo36.png"/>重置密码</h1>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div name="divreg" class="reg-form">
+            <form class="form-label" name="regform" type="submit">
+                <div class="pas-verify-tel">
+                    <i class="icon ion-information-circled balanced"></i>
+                    请修改您的密码:
+                </div>
+                <label class="item item-input" ng-show="!user.fromReset">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+                    <input name="oldPassword" ng-model="user.oldPassword" type="password"
+                           placeholder="请输入旧密码(6-20位,字母、数字)" required view-password>
+                </label>
+                <label class="item item-input">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+                    <input name="newPassword" ng-model="user.newPassword" type="password"
+                           placeholder="请输入新密码(6-20位,字母、数字)" required view-password>
+                </label>
+                <label class="item item-input">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+                    <input name="pwdConfirm" ng-model="user.pwdConfirm" type="password" placeholder="再次输入密码"
+                           required view-password>
+                </label>
+            </form>
+            <div class="checkbox-right text-right" >
+                <ion-checkbox ng-model="viewPassword" ng-init="viewPassword=false" class="checkbox-calm">显示密码</ion-checkbox>
+            </div>
+            <div class="form-action">
+                <button type="submit" class="ctrl-btn button button-calm" ng-click="doSubmit()">确定修改</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
