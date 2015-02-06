@@ -5,7 +5,9 @@ var app = angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.d
 app.run(function ($ionicPlatform, $rootScope, $cordovaSplashscreen, DB,$cordovaSQLite) {
 
 
-        $rootScope.site = 'http://172.16.44.191:8080/auser/action/do.htm';
+
+        //$rootScope.site = 'http://172.16.44.191:8080/auser/action/do.htm';
+        $rootScope.site = 'http://220.243.139.183:8069/auser/action/do.htm';
         $ionicPlatform.ready(function () {
             DB.init($cordovaSQLite);
             if (window.cordova && window.cordova.plugins.Keyboard) {
