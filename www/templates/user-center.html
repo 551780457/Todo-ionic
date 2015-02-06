@@ -1,4 +1,4 @@
-<ion-view title="个人中心">
+<ion-view title="玩家中心">
     <ion-nav-buttons side="left">
         <button class="button button-icon icon ion-ios7-undo"></button>
     </ion-nav-buttons>
@@ -7,21 +7,28 @@
     </ion-nav-buttons>
 
             <ion-content class="has-header user-home">
-                <div class="home-label">
-                    <ion-item class="item item-icon-right ">
-                        <span class="pic"><img ng-src="img/iconaai.png"></span>
-
-                        <div class="info">
-                            <p>用户名:{{ user.uName + '(' + user.uid + ')' }}</p>
-                            <p class="ui-badge-wrap">桉树叶:100片<a class="ui-badge-corner">?</a></p>
-                            <p>积分:{{ user.uName + '(' + user.uid + ')' }}</p>
-                        </div>
-                    </ion-item>
+                <!--头部-->
+                <div class="user-top-bg">
+                    <a ui-sref="base.tabs.ykh_Card">
+                        <img ng-src="img/zy_logo_big_bg.jpg" class="user-pic" ng-cache>
+                        <div class="user-info">用户名:{{::user.uName}}<br><p class="ui-badge-wrap">桉树叶:100片<a class="ui-badge-corner">?</a></p>积&nbsp;&nbsp;分：{{::MembnerInfo.Integral}}</div>
+                    </a>
                 </div>
+                <!--<div class="home-label">-->
+                    <!--<ion-item class="item item-icon-right ">-->
+                        <!--<span class="pic"><img ng-src="img/iconaai.png"></span>-->
+
+                        <!--<div class="info">-->
+                            <!--<p>用户名:{{ user.uName + '(' + user.uid + ')' }}</p>-->
+                            <!--<p class="ui-badge-wrap">桉树叶:100片<a class="ui-badge-corner">?</a></p>-->
+                            <!--<p>积&nbsp;&nbsp;分:{{ user.uName + '(' + user.uid + ')' }}</p>-->
+                        <!--</div>-->
+                    <!--</ion-item>-->
+                <!--</div>-->
             <div class="list list-inset ctrl-btn">
                 <a class="item item-icon-left item-icon-right calm-bg" href="#">
-                    <i class="icon ion-email"></i>
-                    <span>|</span> a币充值
+                    <i class="icon ion-email"><span>|</span></i>
+                    <span></span> 桉树叶充值
                     <i class="icon ion-ios7-arrow-right"></i>
                 </a>
             </div>

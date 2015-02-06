@@ -39,10 +39,10 @@ angular.module('todo.io.services', ['zy.config'])
             mail: '',
             question: '',
             answer: '',
-            //version: 'papa_web',
-            //imei: 'test',
-            version :'papa_android',
-            imei : ZYDevice.uuid,
+            version: 'papa_web',
+            imei: 'test',
+            //version :'papa_android',
+            //imei : ZYDevice.uuid,
             authCode: '',
             flag: -1
         };
@@ -71,6 +71,10 @@ angular.module('todo.io.services', ['zy.config'])
 
             getUserName : function () {
                 return UserInfo.uName;
+            },
+
+            getMobile: function() {
+              return UserInfo.mobile;
             },
 
             clear: function () {
@@ -107,8 +111,8 @@ angular.module('todo.io.services', ['zy.config'])
             this.question = '',
             this.answer = '',
             this.version = 'papa_web',
-            this.imei = ZYDevice.uuid,
-            //this.imei = 'test';//
+            //this.imei = ZYDevice.uuid,
+            this.imei = 'test';//
             this.authCode = '',
             this.flag = -1
         }
@@ -255,11 +259,12 @@ angular.module('todo.io.services', ['zy.config'])
             if (window.navigator.platform == 'Win32') {
                 console.debug(password);
             } else {
-                var password = ZYCallbackPlugin.desEncrypt(user.password, function(res){
-                    return res;
+                ZYCallbackPlugin.desEncrypt(user.password, function(res){
+                   return res;
                 });
-                console.debug(password);
             }
+
+            console.debug("加密密码：" + password);
             return DB.query('SELECT * FROM users WHERE uid=?', [user.uid])
                 .then(function(result){
                     if(result.rows.length > 0) {

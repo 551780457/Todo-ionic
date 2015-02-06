@@ -1,52 +1,11 @@
-angular.module('todo.io.controllers', [])
-
-// *******************
-// 用户中心
-// *******************
-    .controller('UserCenterCtrl', function ($scope, User, Task) {
-
-        $scope.init = function () {
-            var username = 'a81566119';
-            User.setUsername(username);
-            $scope.user = User.getUser();
-            $scope.getUserInfo();
-        }
-
-        $scope.getUserInfo = function () {
-
-            //Task.getUserInfo($scope.user)
-            //    .then(function (res) {
-            //        alert(res);
-            //    }, function (err, status) {
-            //        alert('网络访问失败');
-            //    });
-        }
+//angular.module('todo.io.controllers', [])
 
 
-        $scope.switchAccount = function () {
-
-        }
-
-        $scope.returnToGame = function () {
-            ZYCallbackPlugin.call(
-                'Test',
-                function () {
-                    alert('Plugin success');
-                },
-                function () {
-                    alert('plugin fail');
-                }
-            );
-        }
-
-
-        $scope.init();
-    })
 
 // *******************
 // 账户注册登录模块
 // *******************
-    .controller('AccountCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', 'User', 'Task', 'Database', 'UserTO', function ($scope, $state, PluginUtil, $ionicLoading, User, Task, Database, UserTO) {
+app .controller('AccountCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', 'User', 'Task', 'Database', 'UserTO', function ($scope, $state, PluginUtil, $ionicLoading, User, Task, Database, UserTO) {
 
         $scope.user = {};
 
@@ -64,7 +23,7 @@ angular.module('todo.io.controllers', [])
             user.setUsername($scope.user.username);
             user.setPassword($scope.user.password);
             user.setFlag(UserTO.REG);
-            console.debug('注册前的ser:\n' + JSON.stringify(user));
+            console.debug('注册前的user:\n' + JSON.stringify(user));
             Task.getUserInfo(user).then(
                 function (data) {
                     var ret = angular.fromJson(data.data);
@@ -74,7 +33,7 @@ angular.module('todo.io.controllers', [])
 
                     if (code == UserTO.RESULT_OK) {
                         User.setUser(msg);
-                        console.debug('注册后的Usuer:\n' + JSON.stringify(User.getUser()));
+                        console.debug('注册后的User:\n' + JSON.stringify(User.getUser()));
                         $ionicLoading.hide();
                         PluginUtil.showAlert('注册成功！请牢记您的账号和密码！', '前往登录', function () {
                             $state.go("login", {}, {reload: true});
@@ -117,23 +76,19 @@ angular.module('todo.io.controllers', [])
                 return false;
             }
 
-            if (!$scope.user.pwdConfirm || $scope.user.password != $scope.user.pwdConfirm) {
-                PluginUtil.toastShortTop("请确认两次输入的密码保持一致")
-                return false;
-            }
             return true;
         }
-    }])
+    }]);
 
-    .controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$interval', 'User', 'UserTO', 'Task', 'Database', 'PluginUtil', function ($scope, $state, $ionicLoading, $interval, User, UserTO, Task, Database, PluginUtil) {
+app  .controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$interval', 'User', 'UserTO', 'Task', 'Database', 'PluginUtil', function ($scope, $state, $ionicLoading, $interval, User, UserTO, Task, Database, PluginUtil) {
         $scope.user = {};
         $scope.userList = [];
         $scope.user.isSavedUser = true;
         $scope.user.listStyle = "ion-chevron-down";
         $scope.$on('$ionicView.afterEnter', function () {
-            console.debug('进入的User:\n' + JSON.stringify(User.getUser()))
+            console.debug('进入登录界面的User:\n' + JSON.stringify(User.getUser()))
             Database.getUserList().then(function (result) {
-                console.debug('数据库的User:\n' + JSON.stringify(result))
+                console.debug('login页从数据库获取的User:\n' + JSON.stringify(result))
                 $scope.userList = result;
                 if (User.getUserName() && User.getUserName() != '') {
                     $scope.user.username = User.getUserName();
@@ -245,22 +200,27 @@ angular.module('todo.io.controllers', [])
                     if (code == UserTO.RESULT_OK || code == UserTO.RESULT_99) {
                         User.setUser(msg);
                         var login_date = new Date().getTime();
-
                         if ($scope.user.isSavedUser == true) {
                             User.setPassword($scope.user.password);
-                            Database.insert(User.getUser(), login_date).then(function (result) {
-                                $scope.userList = result;
-                                console.debug('存储结果1：' + JSON.stringify(result));
-                            });
                         } else {
                             User.setPassword('');
-                            Database.insert(User.getUser(), login_date).then(function (result) {
-                                $scope.userList = result;
-                                console.debug('存储结果1：' + JSON.stringify(result));
-                            });
                         }
-                        $ionicLoading.hide();
-                        PluginUtil.toastShortTop(msg['uName'] + ', 欢迎回来！');
+                        Database.insert(User.getUser(), login_date).then(function (result) {
+                            $scope.userList = result;
+                            console.debug('保存登录用户结果：' + JSON.stringify(result));
+                        });
+
+                        if(User.getMobile() == ''){
+                            $ionicLoading.hide();
+                            $state.go('telbindtips');
+                        } else {
+                            //ZYCallbackPlugin.call(JSON.stringify(User.getUser()), function(){
+                            //    $ionicLoading.hide();
+                            //    PluginUtil.toastShortTop(msg['uName'] + ', 欢迎回来！');
+                            //});
+                            $ionicLoading.hide();
+                            $state.go('tabs.home');
+                        }
                     } else {
                         $ionicLoading.hide();
                         if (desc == null || desc == '') {
@@ -310,12 +270,12 @@ angular.module('todo.io.controllers', [])
                 from: 'TelReg',
                 data: null
             };
-            $state.go('verifytel', params);
+           // $state.go('verifytel', params);
+            $state.go('telRegSuccess', params);
         }
-    }])
+    }]);
 
-
-    .controller('TelBindTipsCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, UserTO, Task, Database) {
+app  .controller('TelBindTipsCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory','User', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, User, UserTO, Task, Database) {
         $scope.toBind = function () {
             var params = {
                 from: 'TelBind',
@@ -326,11 +286,13 @@ angular.module('todo.io.controllers', [])
 
         $scope.bindLater = function () {
             // todo 关闭窗口，登录回调
+            ZYCallbackPlugin.call(JSON.stringify(User.getUser()), function(){
+                PluginUtil.toastShortTop(User.getUserName() + ', 欢迎回来！');
+            });
         }
-    }])
+    }]);
 
-
-    .controller('VerifyUserCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, UserTO, Task, Database) {
+app  .controller('VerifyUserCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, UserTO, Task, Database) {
         $scope.user = {};
 
         $scope.setInputEmpty = function () {
@@ -390,9 +352,9 @@ angular.module('todo.io.controllers', [])
                 });
         }
 
-    }])
+    }]);
 
-    .controller('VerifyTelCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User','UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
+app   .controller('VerifyTelCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User','UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
         $scope.user = {};
         var from = $stateParams.from;
         var data = $stateParams.data;
@@ -417,6 +379,7 @@ angular.module('todo.io.controllers', [])
             } else if(from == 'TelBind') {
                 $scope.user.fromPas = false;
                 $scope.user.title = '绑定手机';
+                user.setUser(User.getUser());
                 user.setFlag(UserTO.SEND_CODE_BIND_TEL);
             }
         }
@@ -575,7 +538,10 @@ angular.module('todo.io.controllers', [])
                         user.setUser(msg);
                         console.debug('提交绑定手机后的User:\n' + JSON.stringify(user));
                         // todo 关闭窗口 登录回调
-                        $ionicLoading.hide();
+                        ZYCallbackPlugin.call(JSON.stringify(User.getUser()), function(){
+                            $ionicLoading.hide();
+                            PluginUtil.toastShortTop(User.getUserName() + ', 欢迎回来！');
+                        });
                     } else {
                         $ionicLoading.hide();
                         if (desc == null || desc == '') {
@@ -593,9 +559,9 @@ angular.module('todo.io.controllers', [])
 
         $scope.init();
 
-    }])
+    }]);
 
-    .controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User', 'UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
+app  .controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User', 'UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
         $scope.user = {};
         var from = $stateParams.from;
         var data = $stateParams.data;
@@ -683,4 +649,36 @@ angular.module('todo.io.controllers', [])
         }
 
         $scope.init();
-    }])
+    }]);
+
+app .controller('TelRegSuccessCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User', 'UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
+        $scope.user = {};
+        $scope.init = function () {
+            $scope.buttonContent = '前往登录';
+            $scope.user.username = User.getUserName();
+
+        }
+
+        $scope.setInputEmpty = function () {
+            $scope.user.newPas = '';
+            $scope.inputChanged();
+        }
+
+        $scope.inputChanged = function () {
+            if($scope.user.newPas.length > 0) {
+                $scope.buttonContent = '修改密码并前往登录';
+            } else {
+                $scope.buttonContent = '前往登录';
+            }
+        }
+
+        $scope.toLogin =function () {
+            if($scope.user.newPas && $scope.user.newPas.length > 0){
+                //todo 修改密码并跳登录
+            } else {
+                $state.go('login');
+            }
+        }
+
+        $scope.init();
+    }]);

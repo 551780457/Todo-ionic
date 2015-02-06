@@ -1,0 +1,59 @@
+<ion-view title="个人中心">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-undo"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-log-out"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header rightMenu">
+        <!-- //右侧菜单列表 -->
+        <div class="rightSlide">
+            <div class="headPortrait">
+                <ul>
+                    <li>
+                        <a ui-sref="base.tabs.base_settingInfo" menu-close>
+                            <img ng-src="img/zy_logo.png" alt="头像"/>
+                        </a>
+                    </li>
+                    <li class="f-12">
+                        {{rightMenuData.user.name}}
+                    </li>
+                    <li class="f-09">
+                        <!--您好！欢迎光临-->
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+
+                <div>
+                    <div class="allItem">
+                        <a class="item item-icon-left item-icon-right ng-binding" menu-close="" ng-click="Exit()">
+                            <img ng-src="img/icons/service.png" alt="图标">
+                            联系客服
+                            <i class="icon ion-ios7-arrow-right"></i>
+                        </a>
+
+                        <a class="item item-icon-left item-icon-right ng-binding" menu-close="" ng-click="Exit()">
+                            <img ng-src="img/icons/tuichu.png" alt="图标">
+                            退出
+                            <i class="icon ion-ios7-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <!--<div class="item item-divider ng-binding">
+                    投诉建议
+                </div>
+                <a class="item item-icon-left item-icon-right" menu-close="" href="tel:112">
+                    <img ng-src="images/icons/rightMenu_icons_7.png" alt="图标" src="images/icons/rightMenu_icons_7.png">
+                    拨打电话
+                    <i class="icon ion-ios-telephone c-2 f-09"></i>
+                </a>-->
+                <!--<div class="padding">-->
+                <!--<button ng-click="Exit()" class="button button-block button-energized">退出</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

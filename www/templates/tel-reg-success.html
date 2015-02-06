@@ -1,0 +1,40 @@
+<ion-view>
+    <div>
+        <div class="bar bar-header bar-light account-header">
+            <!--<a class="button button-small icon ion-arrow-left-b" href="#/tab/brewers"></a>-->
+            <h1 class="title"><img src="img/zy_logo_48.png"/>注册成功</h1>
+        </div>
+    </div>
+    <ion-content class="has-header">
+        <div class="tel-reg_label">
+            账&nbsp;&nbsp;&nbsp;&nbsp;号：{{user.username}}
+        </div>
+        <div class="tel-reg_label">
+            初始密码：{{user.password}}
+        </div>
+        <div class="tel-reg_tip">
+            <i class="icon ion-alert-circled balanced"></i>
+            为方便记忆，可输入新密码
+        </div>
+        <div class="login-form">
+            <form class="form-list" type="submit">
+                <div class="item-input-wrapper inner-input">
+                    <span class="form-label-left"><i class="ion-ios7-locked"></i></span>
+
+                    <div class="form-cont">
+                        <input class="ctrl-txt" name="user.newPas" ng-model="user.newPas" ng-change="inputChanged()"
+                               type="password" placeholder="6-20位，区分大小写"/>
+                    </div>
+                    <span class="form-label-right-pas-2" ng-click="setInputEmpty()" ng-show="user.newPas.length>0"><i
+                            class="ion-android-close"></i></span>
+                </div>
+            </form>
+        </div>
+        <div class="tel-reg_btn">
+            <button type="submit" class="ctrl-btn button button-calm " ng-click="toLogin()"
+                    ng-disabled="(user.newPas.length!=0 &&(user.newPas.length<6||user.newPas.length>20))">
+                {{buttonContent}}
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

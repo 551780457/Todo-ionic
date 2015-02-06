@@ -18,14 +18,15 @@
     <script type="text/javascript" src="js/directives.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/ucController.js"></script>
   </head>
-  <script type="text/javascript">
-    document.addEventListener('deviceready', function onDeviceReady() {
-      angular.bootstrap(document, ['todo.io']);
-    }, false);
-  </script>
+  <!--<script type="text/javascript">-->
+    <!--document.addEventListener('deviceready', function onDeviceReady() {-->
+      <!--angular.bootstrap(document, ['todo.io']);-->
+    <!--}, false);-->
+  <!--</script>-->
   <!--ng-app="todo.io"-->
-  <body >
+  <body ng-app="todo.io">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

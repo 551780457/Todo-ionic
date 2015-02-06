@@ -1,8 +1,8 @@
 var db = null;
 
-angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'todo.io.controllers', 'nsPopover'])
+var app = angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives', 'todo.io.filters', 'todo.io.services', 'nsPopover']);
 
-    .run(function ($ionicPlatform, $rootScope, $cordovaSplashscreen, DB,$cordovaSQLite) {
+app.run(function ($ionicPlatform, $rootScope, $cordovaSplashscreen, DB,$cordovaSQLite) {
 
 
         $rootScope.site = 'http://172.16.44.191:8080/auser/action/do.htm';
@@ -16,9 +16,9 @@ angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives'
             }
             $cordovaSplashscreen.hide()
         });
-    })
+    });
 
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
         $httpProvider.defaults.timeout = 5000;
 
@@ -61,10 +61,16 @@ angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives'
                 controller: 'PasCtrl'
             })
 
+            .state('telRegSuccess',{
+                url: '/telRegSuccess',
+                templateUrl: 'templates/tel-reg-success.html',
+                controller: 'TelRegSuccessCtrl'
+            })
+
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
-                templateUrl: "templates/menu.html"
+                templateUrl: "templates/tab.html"
             })
 
             .state('tabs.home', {
@@ -89,7 +95,7 @@ angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives'
                 url: "/service",
                 views: {
                     'service-tab': {
-                        templateUrl: "templates/user-center.html",
+                        templateUrl: "templates/uc-service.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
@@ -97,3 +103,20 @@ angular.module('todo.io', ['ionic','ngCordova','zy.config', 'todo.io.directives'
         $urlRouterProvider.otherwise('/');
     });
 
+//app效果配置
+app.config(['$ionicConfigProvider',function($ionicConfigProvider){
+    //tabs
+    $ionicConfigProvider.platform.android.tabs.position("bottom");
+    $ionicConfigProvider.tabs.style("standard");
+
+    //返回按钮
+    $ionicConfigProvider.backButton.icon('ion-ios-arrow-left');
+
+    //禁用缓存
+    $ionicConfigProvider.views.maxCache(0);
+
+    //切换效果
+    $ionicConfigProvider.views.transition("ios");
+
+    $ionicConfigProvider.navBar.alignTitle("ios");
+}]);
