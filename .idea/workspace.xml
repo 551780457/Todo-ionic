@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68c503b6-72d6-4dc2-ada8-29e5867ecd2a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/bg_ykh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/icons/service.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/icons/tuichu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/icons/xiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/icons/xiazaiwu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/zy_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/zy_logo_big_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/tel-reg-success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/uc-service.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/ucController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/account-login.html" afterPath="$PROJECT_DIR$/www/templates/account-login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/account-reg.html" afterPath="$PROJECT_DIR$/www/templates/account-reg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/frozenui.css" afterPath="$PROJECT_DIR$/www/css/frozenui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/pas-reset.html" afterPath="$PROJECT_DIR$/www/templates/pas-reset.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/tel-bind-tips.html" afterPath="$PROJECT_DIR$/www/templates/tel-bind-tips.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/user-center.html" afterPath="$PROJECT_DIR$/www/templates/user-center.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/verify-tel.html" afterPath="$PROJECT_DIR$/www/templates/verify-tel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/verify-user.html" afterPath="$PROJECT_DIR$/www/templates/verify-user.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\web\ToDo-ionic\www\img\logo36.png" afterPath="$PROJECT_DIR$/www/img/zy_logo_36.png" />
-      <change type="MOVED" beforePath="D:\web\ToDo-ionic\www\img\logo48.png" afterPath="$PROJECT_DIR$/www/img/zy_logo_48.png" />
-      <change type="MOVED" beforePath="D:\web\ToDo-ionic\www\templates\menu.html" afterPath="$PROJECT_DIR$/www/templates/tab.html" />
     </list>
     <ignored path="ToDo-ionic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -318,6 +292,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ToDo-ionic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -326,7 +332,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhongliang" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
@@ -422,7 +428,7 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\sandy\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -545,13 +551,20 @@
       <option name="project" value="LOCAL" />
       <updated>1422007591636</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="玩家中心主页，客服布局">
+      <created>1423197592312</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1423197592312</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -567,7 +580,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -625,7 +637,8 @@
     <MESSAGE value="登录用户记录" />
     <MESSAGE value="忘记密码" />
     <MESSAGE value="第一部分小版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一部分小版本" />
+    <MESSAGE value="玩家中心主页，客服布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="玩家中心主页，客服布局" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
