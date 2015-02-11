@@ -79,11 +79,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
                 url: "/home",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/user-center.html",
+                        templateUrl: "templates/uc-home.html",
                         controller: 'UserCenterCtrl'
                     }
                 }
             })
+
+            .state('tabs.PasModify', {
+                url: "/PasModify",
+                views: {
+                    'home-tab': {
+                        templateUrl: "templates/pas-reset.html",
+                        controller: 'PasCtrl'
+                    }
+                }
+            })
+
             .state('tabs.gift', {
                 url: "/gift",
                 views: {

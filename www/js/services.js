@@ -141,7 +141,9 @@ angular.module('todo.io.services', ['zy.config'])
             },
 
             setUser: function (user) {
+                console.debug('userTo.setUser->' + JSON.stringify(user));
                 this.uid =  typeof(user['uid']) == "undefined" ? 0:user['uid'];
+                console.debug('userTo.setUser->' + this.uid);
                 this.token =  typeof(user['token']) == "undefined" ? '':user['token'];
                 this.uName = typeof(user['uName']) == "undefined" ? '':user['uName'];
                 this.nickName =  typeof(user['nickName']) == "undefined" ? '':user['nickName'];

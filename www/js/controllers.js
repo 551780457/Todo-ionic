@@ -80,7 +80,7 @@ app .controller('AccountCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading
         }
     }]);
 
-app  .controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$interval', 'User', 'UserTO', 'Task', 'Database', 'PluginUtil', function ($scope, $state, $ionicLoading, $interval, User, UserTO, Task, Database, PluginUtil) {
+app.controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$interval', 'User', 'UserTO', 'Task', 'Database', 'PluginUtil', function ($scope, $state, $ionicLoading, $interval, User, UserTO, Task, Database, PluginUtil) {
         $scope.user = {};
         $scope.userList = [];
         $scope.user.isSavedUser = true;
@@ -275,7 +275,7 @@ app  .controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$interval',
         }
     }]);
 
-app  .controller('TelBindTipsCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory','User', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, User, UserTO, Task, Database) {
+app.controller('TelBindTipsCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory','User', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, User, UserTO, Task, Database) {
         $scope.toBind = function () {
             var params = {
                 from: 'TelBind',
@@ -292,7 +292,7 @@ app  .controller('TelBindTipsCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLo
         }
     }]);
 
-app  .controller('VerifyUserCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, UserTO, Task, Database) {
+app.controller('VerifyUserCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoading', '$ionicHistory', 'UserTO', 'Task', 'Database', function ($scope, $state, PluginUtil, $ionicLoading, $ionicHistory, UserTO, Task, Database) {
         $scope.user = {};
 
         $scope.setInputEmpty = function () {
@@ -354,7 +354,7 @@ app  .controller('VerifyUserCtrl', ['$scope', '$state', 'PluginUtil', '$ionicLoa
 
     }]);
 
-app   .controller('VerifyTelCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User','UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
+app.controller('VerifyTelCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User','UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
         $scope.user = {};
         var from = $stateParams.from;
         var data = $stateParams.data;
@@ -561,7 +561,7 @@ app   .controller('VerifyTelCtrl', ['$scope', '$state', '$stateParams', 'PluginU
 
     }]);
 
-app  .controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User', 'UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
+app.controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '$ionicLoading', '$ionicHistory', '$interval', 'User', 'UserTO', 'Task', 'Database', function ($scope, $state, $stateParams, PluginUtil, $ionicLoading, $ionicHistory, $interval, User, UserTO, Task, Database) {
         $scope.user = {};
         var from = $stateParams.from;
         var data = $stateParams.data;
@@ -571,10 +571,12 @@ app  .controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '
             if (from == 'PasReset') {
                 user.setUser(data);
                 $scope.user.fromReset = true;
-            } else if (from == 'PasModify') {
-                user.setUser(data);
+            } else if (from == null) {
+                user.setUser(User.getUser());
                 $scope.user.fromReset = false;
             }
+            console.debug('PasCtrl->' + JSON.stringify(User.getUser()));
+            console.debug('PasCtrl->' + JSON.stringify(user));
         }
 
         $scope.doSubmit = function () {
@@ -629,7 +631,7 @@ app  .controller('PasCtrl', ['$scope', '$state', '$stateParams', 'PluginUtil', '
         $scope.checkInput = function () {
             var reg2 = /[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-@]{6,20}$/;
 
-            if (from == 'PasModify') {
+            if (from != 'PasReset') {
                 if (!$scope.user.oldPassword || !reg2.test($scope.user.oldPassword)) {
                     PluginUtil.toastShortTop("请正确填写旧密码")
                     return false;
